@@ -1,20 +1,25 @@
 {
-  "name": "@fratercula/remix",
+  "name": "@fratercula/falco",
   "version": "0.1.0",
-  "description": "Remix",
+  "description": "JavaScript Transcoder",
   "main": "index.js",
   "scripts": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fratercula/Remix.git"
+    "url": "git+https://github.com/fratercula/falco.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "webpack",
+    "babel",
+    "transcoder",
+    "code-switching"
+  ],
+  "author": "LoeiFy <LoeiFy@gmail.com>",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/fratercula/Remix/issues"
+    "url": "https://github.com/fratercula/falco/issues"
   },
-  "homepage": "https://github.com/fratercula/Remix#readme",
+  "homepage": "https://github.com/fratercula/falco#readme",
   "dependencies": {
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.2.3",
@@ -24,8 +29,5 @@
     "style-loader": "^0.23.1",
     "webpack": "^4.28.4"
   },
-  "devDependencies": {
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0"
-  }
+  "devDependencies": {}
 }

@@ -4,6 +4,7 @@
   "description": "JavaScript Transcoder",
   "main": "index.js",
   "scripts": {
+    "test": "node ./test/index.js"
   },
   "repository": {
     "type": "git",

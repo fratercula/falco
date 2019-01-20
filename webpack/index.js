@@ -18,11 +18,11 @@ module.exports = async (config) => {
     } = source
 
     if (js) {
-      outputFileSync(join(baseDir, 'entry', `js${i}.js`), js)
+      outputFileSync(join(baseDir, `js${i}.js`), js)
       compileConfig.entry.push(`js${i}.js`)
     }
     if (css) {
-      outputFileSync(join(baseDir, 'entry', `css${i}.css`), css)
+      outputFileSync(join(baseDir, `css${i}.css`), css)
       compileConfig.entry.push(`css${i}.css`)
     }
   })

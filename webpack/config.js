@@ -50,7 +50,7 @@ const base = {
 module.exports = (config) => {
   const {
     entry,
-    compress,
+    compress = true,
     externals = {},
   } = config
 

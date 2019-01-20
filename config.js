@@ -1,1 +1,1 @@
-export const WORKING_DIR = 'context'
+module.exports.WORKING_DIR = 'context'

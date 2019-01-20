@@ -1,8 +1,10 @@
-module.exports = {
-  entry: ['./test.js', './test1.js'],
+const { resolve } = require('path')
+const defaultExternals = require('./externals')
 
+const base = {
   output: {
     filename: 'output.js',
+    path: resolve(__dirname, '../context')
   },
 
   module: {
@@ -10,7 +12,13 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react'],
+            plugins: [],
+          }
+        },
       },
       {
         test: /\.css$/,
@@ -35,17 +43,19 @@ module.exports = {
     ],
   },
 
-  mode: 'production',
-  // mode: 'development',
-
-  resolve: {
-    extensions: ['.js'],
-  },
-
-  externals: {
-    react: 'React',
-    'react-dom': 'ReactDOM',
-  },
-
   devtool: 'source-map',
+}
+
+module.exports = (config) => {
+  const {
+    entry,
+    compress,
+    externals,
+  } = config
+
+  base.mode = compress ? 'production' : 'development'
+  base.externals = { ...defaultExternals, ...externals }
+  base.entry = entry
+
+  return base
 }

@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "description": "JavaScript Transcoder",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "exec": "node ./test2.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fratercula/falco.git"
@@ -21,6 +23,7 @@
   },
   "homepage": "https://github.com/fratercula/falco#readme",
   "dependencies": {
+    "@acyort/logger": "^1.1.1",
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.2.3",
     "@babel/preset-react": "^7.0.0",

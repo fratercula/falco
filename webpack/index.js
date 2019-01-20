@@ -1,25 +1,35 @@
-const webpack = require('webpack')
-const config = require('./webpack')
+const { outputFileSync } = require('fs-extra')
+const { resolve, join } = require('path')
+const compiler = require('./compiler')
+const { WORKING_DIR } = require('../config')
 
-webpack(config, (err, stats) => {
-  if (err) {
-    console.error(err.stack || err)
-    if (err.details) {
-      console.error(...err.details)
+module.exports = async (config) => {
+  const {
+    entry,
+  } = config
+  const sources = Array.isArray(entry) ? entry : [entry]
+  const baseDir = resolve(__dirname, `../${WORKING_DIR}`)
+  const compileConfig = { entry: [] }
+
+  sources.forEach((source, i) => {
+    const {
+      js,
+      css,
+    } = source
+
+    if (js) {
+      outputFileSync(join(baseDir, 'entry', `js${i}.js`), js)
+      compileConfig.entry.push(`js${i}.js`)
     }
-    return
+    if (css) {
+      outputFileSync(join(baseDir, 'entry', `css${i}.css`), css)
+      compileConfig.entry.push(`css${i}.css`)
+    }
+  })
+
+  try {
+    await compiler(compileConfig)
+  } catch (e) {
+    // ignore
   }
-
-  const info = stats.toJson('minimal')
-
-  if (stats.hasErrors()) {
-    console.error(...info.errors)
-    return
-  }
-
-  if (stats.hasWarnings()) {
-    console.warn(...info.warnings)
-  }
-
-  console.log('done')
-})
+}

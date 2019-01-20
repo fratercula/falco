@@ -1,10 +1,11 @@
 const { resolve } = require('path')
 const defaultExternals = require('./externals')
+const { WORKING_DIR } = require('../config')
 
 const base = {
   output: {
     filename: 'output.js',
-    path: resolve(__dirname, '../context')
+    path: resolve(__dirname, `../${WORKING_DIR}`),
   },
 
   module: {
@@ -17,7 +18,7 @@ const base = {
           options: {
             presets: ['@babel/preset-env', '@babel/preset-react'],
             plugins: [],
-          }
+          },
         },
       },
       {
@@ -27,7 +28,7 @@ const base = {
           {
             loader: 'style-loader',
             options: {
-              sourceMap: true
+              sourceMap: true,
             },
           },
           {
@@ -50,12 +51,12 @@ module.exports = (config) => {
   const {
     entry,
     compress,
-    externals,
+    externals = {},
   } = config
 
   base.mode = compress ? 'production' : 'development'
   base.externals = { ...defaultExternals, ...externals }
-  base.entry = entry
+  base.entry = entry.map(d => resolve(__dirname, `../${WORKING_DIR}/${d}`))
 
   return base
 }

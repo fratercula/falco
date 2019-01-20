@@ -4,7 +4,6 @@
   "description": "JavaScript Transcoder",
   "main": "index.js",
   "scripts": {
-    "exec": "node ./test2.js"
   },
   "repository": {
     "type": "git",
@@ -29,8 +28,13 @@
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",
     "css-loader": "^2.1.0",
+    "fs-extra": "^7.0.1",
     "style-loader": "^0.23.1",
     "webpack": "^4.28.4"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "eslint": "^5.12.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0"
+  }
 }

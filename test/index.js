@@ -1,4 +1,4 @@
-const falco = require('../index')
+const falco = require('../')
 
 // const js = `import React from 'react'
 // import { render } from 'react-dom'

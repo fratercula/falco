@@ -12,7 +12,13 @@ const js2 = 'console.log(\'?\')'
 const js3 = `const two = require('two')
 console.log(two())`
 
+const js4 = `import 'reset-css'`
+
 falco({
-  entry: [{ js: js3 }],
+  entry: [{ js: js4 }],
+  cache: true,
+  cssModule: true,
+  cssSourceMap: true,
+  jsSourceMap: true,
 })
   .then(res => console.log(res))

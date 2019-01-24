@@ -1,4 +1,6 @@
+const { join } = require('path')
 const falco = require('../')
+const { tree } = require('../')
 
 // const js = `import React from 'react'
 // import { render } from 'react-dom'
@@ -14,11 +16,14 @@ console.log(two())`
 
 const js4 = `import 'reset-css'`
 
-falco({
-  entry: [{ js: js4 }],
-  cache: true,
-  cssModule: true,
-  cssSourceMap: true,
-  jsSourceMap: true,
-})
-  .then(res => console.log(res))
+// falco({
+//   entry: [{ js: js4 }],
+//   cache: true,
+//   cssModule: true,
+//   cssSourceMap: true,
+//   jsSourceMap: true,
+// })
+//   .then(res => console.log(res))
+
+const dir = join(__dirname, 'example')
+tree(dir)

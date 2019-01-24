@@ -1,6 +1,7 @@
 const { join } = require('path')
 const falco = require('../')
 const { tree } = require('../')
+const reFile = require('../lib/helper/reFile')
 
 // const js = `import React from 'react'
 // import { render } from 'react-dom'
@@ -26,4 +27,7 @@ const js4 = `import 'reset-css'`
 //   .then(res => console.log(res))
 
 const dir = join(__dirname, 'example')
-tree(dir)
+const outputDir = join(__dirname, 'output')
+const dataTree = tree(dir)
+
+reFile(dataTree, outputDir)

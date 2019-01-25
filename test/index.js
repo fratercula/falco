@@ -3,9 +3,9 @@ const falco = require('../')
 const { tree } = require('../')
 const reFile = require('../lib/helper/reFile')
 
-// const js = `import React from 'react'
-// import { render } from 'react-dom'
-// render(<div>hello world</div>, document.querySelector('#root'))`
+const js = `import React from 'react'
+import { render } from 'react-dom'
+render(<div>hello world</div>, document.querySelector('#root'))`
 
 const js1 = `import two from 'two'
 console.log(two())`
@@ -18,11 +18,12 @@ console.log(two())`
 const js4 = `import 'reset-css'`
 
 falco({
-  entry: [{ js: js4 }],
+  entry: [{ js }],
   cache: true,
-  cssModule: true,
-  cssSourceMap: true,
-  jsSourceMap: true,
+  compress: true,
+  cssModule: false,
+  cssSourceMap: false,
+  jsSourceMap: false,
 })
   .then(res => console.log(res))
 

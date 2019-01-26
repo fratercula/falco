@@ -5,20 +5,25 @@ const reFile = require('../lib/helper/reFile')
 
 const js = `import React from 'react'
 import { render } from 'react-dom'
+import 'reset-css'
 render(<div>hello world</div>, document.querySelector('#root'))`
 
-const js1 = `import two from 'two'
-console.log(two())`
+// const js1 = `import two from 'two'
+// console.log(two())`
 
-const js2 = 'console.log(\'?\')'
+// const js2 = 'console.log(\'?\')'
 
-const js3 = `const two = require('two')
-console.log(two())`
+// const js3 = `const two = require('two')
+// console.log(two())`
 
-const js4 = `import 'reset-css'`
+// const js4 = `import 'reset-css'`
 
 falco({
-  entry: [{ js }],
+  // entry: {
+    // type: 'string',
+    // data: { js },
+  // },
+  entry: { js },
   cache: true,
   compress: true,
   cssModule: false,

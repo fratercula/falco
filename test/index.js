@@ -1,4 +1,5 @@
 const { join } = require('path')
+const { outputFileSync } = require('fs-extra')
 const falco = require('../')
 const { tree } = require('../')
 const reFile = require('../lib/helper/reFile')
@@ -18,21 +19,21 @@ render(<div>hello world</div>, document.querySelector('#root'))`
 
 // const js4 = `import 'reset-css'`
 
-// falco({
-//   entry: {
-//     type: 'string',
-//     data: { js },
-//   },
-//   cache: true,
-//   compress: true,
-//   cssModule: false,
-//   cssSourceMap: false,
-//   jsSourceMap: false,
-// })
-//   .then(res => console.log(res))
+const dir = join(__dirname, 'example')
+const dataTree = tree(dir)
 
-// const dir = join(__dirname, 'example')
-// const outputDir = join(__dirname, 'output')
-// const dataTree = tree(dir)
-
-// reFile(dataTree, outputDir)
+falco({
+  entry: {
+    // type: 'string',
+    type: 'tree',
+    main: 'index.js',
+    data: dataTree,
+    // data: { js },
+  },
+  cache: true,
+  compress: true,
+  cssModule: false,
+  cssSourceMap: false,
+  jsSourceMap: false,
+})
+  .then(res => outputFileSync(join(__dirname, 'output.js'), res.js))

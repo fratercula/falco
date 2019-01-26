@@ -18,19 +18,18 @@ render(<div>hello world</div>, document.querySelector('#root'))`
 
 // const js4 = `import 'reset-css'`
 
-falco({
-  // entry: {
-    // type: 'string',
-    // data: { js },
-  // },
-  entry: { js },
-  cache: true,
-  compress: true,
-  cssModule: false,
-  cssSourceMap: false,
-  jsSourceMap: false,
-})
-  .then(res => console.log(res))
+// falco({
+//   entry: {
+//     type: 'string',
+//     data: { js },
+//   },
+//   cache: true,
+//   compress: true,
+//   cssModule: false,
+//   cssSourceMap: false,
+//   jsSourceMap: false,
+// })
+//   .then(res => console.log(res))
 
 // const dir = join(__dirname, 'example')
 // const outputDir = join(__dirname, 'output')

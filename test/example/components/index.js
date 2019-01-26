@@ -1,1 +1,1 @@
-console.log('b')
+export default 2

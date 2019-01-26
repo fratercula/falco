@@ -1,1 +1,3 @@
-console.log('a')
+import s from './components'
+
+console.log(s)

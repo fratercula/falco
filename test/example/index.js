@@ -1,24 +1,9 @@
-import Sa from './components'
+import staff from './components'
+import React from 'react'
+import { render } from 'react-dom'
+import { Button } from 'antd'
+import 'reset-css/less/reset.less'
 
-new Sa().log()
+staff()
 
-let { x, y, ...z } = { x: 1, y: 2, a: 3, b: 4 };
-console.log(x); // 1
-console.log(y); // 2
-console.log(z); // { a: 3, b: 4 }
-
-function testable(isTestable) {
-  return function(target) {
-    target.isTestable = isTestable;
-  }
-}
-
-@testable(true)
-class MyTestableClass {}
-
-console.log(MyTestableClass.isTestable) // true
-
-;(async () => {
-  await console.log(1)
-  console.log(2)
-})()
+render(<Button type="primary">Hello World</Button>, document.querySelector('#root'))

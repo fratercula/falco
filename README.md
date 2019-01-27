@@ -84,6 +84,16 @@ built-in:
 }
 ```
 
+### registry
+
+set npm registry
+
+example:
+
+```js
+registry: 'https://registry.npm.taobao.org'
+```
+
 ### other options
 
 | name | description | type | default |

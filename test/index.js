@@ -14,11 +14,12 @@ falco({
     path: dir,
   },
   moduleRules: [],
+  registry: 'https://registry.npm.taobao.org',
   externals: { antd: 'antd' },
   cache: true, // true
   esModules: true, // true
   compress: true, // true
-  cssModule: true, // false
+  cssModule: false, // false
   cssSourceMap: true, // false
   jsSourceMap: true, // false
 })

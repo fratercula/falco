@@ -14,16 +14,21 @@ falco({
     main: 'index.js',
     data: dataTree,
   },
+  moduleRules: [],
+  output: 'output', // 'output'
   externals: { antd: 'antd' },
-  cache: true,
-  esmodules: true,
-  compress: true,
-  cssModule: false,
-  cssSourceMap: false,
-  jsSourceMap: false,
+  cache: true, // true
+  esmodules: true, // true
+  compress: true, // true
+  cssModule: true, // false
+  cssSourceMap: true, // false
+  jsSourceMap: true, // false
 })
   .then(({ js, sourceMap, dependencies }) => {
     console.log(dependencies)
     outputFileSync(join(__dirname, 'output.js'), js)
+    if (sourceMap) {
+      outputFileSync(join(__dirname, 'output.js.map'), sourceMap)
+    }
   })
   .catch(err => console.log(err))

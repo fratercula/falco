@@ -14,12 +14,15 @@ $ npm i @fratercula/falco
 const falco = require('@fratercula/falco')
 
 const options = {
-  //...
+  // see options below
 }
 
 ;(async () => {
   try {
-    const { js, sourceMap, dependencies } = falco(options)
+    const { js, sourceMap, dependencies } = await falco(options)
+    // js: converted code / string
+    // sourceMap: filename is `output.js.map` / string
+    // dependencies: package dependence / array
   } catch (e) {
     console.log(e)
   }
@@ -28,7 +31,7 @@ const options = {
 
 ### Options
 
-**entry**
+### entry
 
 codes to be converted, type is `object` or `array`, required.
 
@@ -51,7 +54,7 @@ example
 }
 ```
 
-**moduleRules**
+### moduleRules
 
 custom webpack loaders, type is `array`, default is `[]`
 
@@ -67,7 +70,7 @@ example:
 ]
 ```
 
-**externals**
+### externals
 
 same as webpack externals config, type is `object`, default `{}`
 
@@ -81,16 +84,16 @@ built-in:
 }
 ```
 
-**other options**
+### other options
 
-| name | description | type | default | example |
-| --- | --- | --- | --- | --- |
-| cache | cache npm install files | boolean | true | - |
-| esModules | [@babel/preset-env option](https://babeljs.io/docs/en/babel-preset-env#targetsesmodules) | boolean | true | - |
-| compress | code compress | boolean | true | - |
-| cssModule | [css module](https://github.com/css-modules/css-modules) | boolean | false | - |
-| cssSourceMap | css sourceMap | boolean | false | - |
-| jsSourceMap | js sourceMap | boolean | false | - |
+| name | description | type | default |
+| --- | --- | --- | --- |
+| cache | cache npm install files | boolean | true |
+| esModules | [@babel/preset-env option](https://babeljs.io/docs/en/babel-preset-env#targetsesmodules) | boolean | true |
+| compress | code compress | boolean | true |
+| cssModule | [css module](https://github.com/css-modules/css-modules) | boolean | false |
+| cssSourceMap | css sourceMap | boolean | false |
+| jsSourceMap | js sourceMap | boolean | false |
 
 ## License
 

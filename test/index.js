@@ -14,10 +14,9 @@ falco({
     path: dir,
   },
   moduleRules: [],
-  output: 'output.js', // 'output.js'
   externals: { antd: 'antd' },
   cache: true, // true
-  esmodules: true, // true
+  esModules: true, // true
   compress: true, // true
   cssModule: true, // false
   cssSourceMap: true, // false

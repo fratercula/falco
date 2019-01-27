@@ -1,2 +1,8 @@
-import './index.css'
-export default 2
+// import './index.css'
+export default class {
+  state = 1
+
+  log() {
+    console.log(this.state)
+  }
+}

@@ -1,21 +1,20 @@
 const { join } = require('path')
 const { outputFileSync } = require('fs-extra')
 const falco = require('../')
-const { tree } = require('../')
 
 const dir = join(__dirname, 'example')
-const dataTree = tree(dir)
+const js = 'console.log(1)'
+const css = 'body { background: grey; }'
 
 falco({
+  // entry: { js, css },
+  // entry: [{ js, css }],
   entry: {
-    // type: 'string',
-    // data: { js },
-    type: 'tree',
     main: 'index.js',
-    data: dataTree,
+    path: dir,
   },
   moduleRules: [],
-  output: 'output', // 'output'
+  output: 'output.js', // 'output.js'
   externals: { antd: 'antd' },
   cache: true, // true
   esmodules: true, // true

@@ -36,7 +36,9 @@ const options = {
 | cache | cache npm install files | boolean | true | - | - |
 | esModules | [@babel/preset-env option](https://babeljs.io/docs/en/babel-preset-env#targetsesmodules) | boolean | true | - | - |
 | compress | code compress | boolean | true | - | - |
-| css | code compress | boolean | true | - | - |
+| cssModule | [css module](https://github.com/css-modules/css-modules) | boolean | false | - | - |
+| cssSourceMap | css sourceMap | boolean | false | - | - |
+| jsSourceMap | js sourceMap | boolean | false | - | - |
 
 ## License
 

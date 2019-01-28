@@ -1,17 +1,20 @@
 const { join } = require('path')
 const { outputFileSync } = require('fs-extra')
 const falco = require('../')
+const { tree } = require('../')
 
 const dir = join(__dirname, 'example')
 const js = 'console.log(1)'
 const css = 'body { background: grey; }'
+const treeData = tree(dir)
 
 falco({
   // entry: { js, css },
   // entry: [{ js, css }],
   entry: {
     main: 'index.js',
-    path: dir,
+    data: treeData,
+    // path: dir,
   },
   moduleRules: [],
   registry: 'https://registry.npm.taobao.org',

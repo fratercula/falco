@@ -12,6 +12,9 @@ $ npm i @fratercula/falco
 
 ```js
 const falco = require('@fratercula/falco')
+const { tree } = require('@fratercula/falco')
+
+const treeData = tree('path/to/codes/directory')
 
 const options = {
   // see options below
@@ -51,6 +54,15 @@ example
 {
   main: 'index.js', // main entry
   path: '/path/to/your/codes/directory'
+}
+
+// directory data
+const { tree } = require('@fratercula/falco')
+const treeData = tree('path/to/codes/directory')
+
+{
+  main: 'index.js',
+  data: treeData,
 }
 ```
 

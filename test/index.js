@@ -19,8 +19,8 @@ falco({
   moduleRules: [],
   registry: 'https://registry.npm.taobao.org',
   externals: {
-    react: 'React',
-    'react-dom': 'ReactDOM',
+    // react: 'React',
+    // 'react-dom': 'ReactDOM',
   },
   cache: true, // true
   esModules: true, // true

@@ -38,7 +38,8 @@
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
     "style-loader": "^0.23.1",
-    "webpack": "^4.28.4"
+    "webpack": "^4.28.4",
+    "webpack-dev-server": "^3.1.14"
   },
   "devDependencies": {
     "eslint": "^5.12.1",

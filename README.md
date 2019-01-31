@@ -22,8 +22,8 @@ const options = {
 
 ;(async () => {
   try {
-    const { js, sourceMap, dependencies } = await falco(options)
-    // js: converted code / string
+    const { code, sourceMap, dependencies } = await falco(options)
+    // code: converted code / string
     // sourceMap: filename is `output.js.map` / string
     // dependencies: package dependence / array
   } catch (e) {
@@ -42,16 +42,16 @@ example
 
 ```js
 // basic
-{
+entry: {
   js: 'console.log(1)',
   css: 'body { color: red }'
 }
 
 // multiple
-[{ js, css }, { js1, css1 }]
+entry: [{ js, css }, { js1, css1 }]
 
 // directory
-{
+entry: {
   main: 'index.js', // main entry
   path: '/path/to/your/codes/directory'
 }
@@ -60,7 +60,7 @@ example
 const { tree } = require('@fratercula/falco')
 const treeData = tree('path/to/codes/directory')
 
-{
+entry: {
   main: 'index.js',
   data: treeData,
 }
@@ -73,7 +73,7 @@ custom webpack loaders, type is `array`, default is `[]`
 example:
 
 ```js
-[
+moduleRules: [
   {
     test: /\.vue$/,
     loader: path.resolve('../loader/path'),
@@ -86,10 +86,10 @@ example:
 
 same as webpack externals config, type is `object`, default `{}`
 
-built-in:
+example:
 
 ```js
-{
+externals: {
   react: 'React',
   'react-dom': 'ReactDOM',
   'react-router-dom': 'ReactRouterDOM',
@@ -106,16 +106,25 @@ example:
 registry: 'https://registry.npm.taobao.org'
 ```
 
-### other options
+### esModules
 
-| name | description | type | default |
-| --- | --- | --- | --- |
-| cache | cache npm install files | boolean | true |
-| esModules | [@babel/preset-env option](https://babeljs.io/docs/en/babel-preset-env#targetsesmodules) | boolean | true |
-| compress | code compress | boolean | true |
-| cssModule | [css module](https://github.com/css-modules/css-modules) | boolean | false |
-| cssSourceMap | css sourceMap | boolean | false |
-| jsSourceMap | js sourceMap | boolean | false |
+@babel/preset-env [option](https://babeljs.io/docs/en/babel-preset-env#targetsesmodules), default is `true`
+
+example:
+
+```js
+esModules: true
+```
+
+### cssModule
+
+[css module](https://github.com/css-modules/css-modules), default is `false`
+
+example:
+
+```js
+cssModules: false
+```
 
 ## License
 

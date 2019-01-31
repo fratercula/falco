@@ -22,12 +22,10 @@ falco({
     // react: 'React',
     // 'react-dom': 'ReactDOM',
   },
-  cache: true, // true
+  port: 8000, // 2222
+  mode: 'develpoment', // 'production'
   esModules: true, // true
-  compress: true, // true
   cssModule: false, // false
-  cssSourceMap: true, // false
-  jsSourceMap: true, // false
 })
   .then(({ js, sourceMap, dependencies }) => {
     console.log(dependencies)

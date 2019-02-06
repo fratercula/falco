@@ -23,7 +23,7 @@ falco({
     // 'react-dom': 'ReactDOM',
   },
   port: 8000, // 2222
-  mode: 'develpoment', // 'production'
+  // mode: 'developoment', // 'production'
   esModules: true, // true
   cssModule: false, // false
 })

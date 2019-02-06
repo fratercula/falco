@@ -38,31 +38,39 @@ const options = {
 
 codes to be converted, type is `object` or `array`, required.
 
-example
+example:
 
 ```js
 // basic
-entry: {
-  js: 'console.log(1)',
-  css: 'body { color: red }'
+{
+  entry: {
+    js: 'console.log(1)',
+    css: 'body { color: red }',
+  },
 }
 
 // multiple
-entry: [{ js, css }, { js1, css1 }]
-
-// directory
-entry: {
-  main: 'index.js', // main entry
-  path: '/path/to/your/codes/directory'
+{
+  entry: [{ js, css }, { js1, css1 }],
 }
 
-// directory data
+// directory
+{
+  entry: {
+    main: 'index.js', // main entry
+    path: '/path/to/your/codes/directory',
+  },
+}
+
+// directory files tree data
 const { tree } = require('@fratercula/falco')
 const treeData = tree('path/to/codes/directory')
 
-entry: {
-  main: 'index.js',
-  data: treeData,
+{
+  entry: {
+    main: 'index.js',
+    data: treeData,
+  },
 }
 ```
 
@@ -73,13 +81,15 @@ custom webpack loaders, type is `array`, default is `[]`
 example:
 
 ```js
-moduleRules: [
-  {
-    test: /\.vue$/,
-    loader: path.resolve('../loader/path'),
-    options: vueLoaderConfig
-  }
-]
+{
+  moduleRules: [
+    {
+      test: /\.vue$/,
+      loader: path.resolve('../loader/path'),
+      options: vueLoaderConfig,
+    },
+  ],
+}
 ```
 
 ### externals
@@ -89,10 +99,12 @@ same as webpack externals config, type is `object`, default `{}`
 example:
 
 ```js
-externals: {
-  react: 'React',
-  'react-dom': 'ReactDOM',
-  'react-router-dom': 'ReactRouterDOM',
+{
+  externals: {
+    react: 'React',
+    'react-dom': 'ReactDOM',
+    'react-router-dom': 'ReactRouterDOM',
+  },
 }
 ```
 
@@ -103,7 +115,9 @@ set npm registry
 example:
 
 ```js
-registry: 'https://registry.npm.taobao.org'
+{
+  registry: 'https://registry.npm.taobao.org',
+}
 ```
 
 ### esModules
@@ -113,7 +127,9 @@ registry: 'https://registry.npm.taobao.org'
 example:
 
 ```js
-esModules: true
+{
+  esModules: true,
+}
 ```
 
 ### cssModule
@@ -123,7 +139,9 @@ esModules: true
 example:
 
 ```js
-cssModules: false
+{
+  cssModule: false,
+}
 ```
 
 ## License

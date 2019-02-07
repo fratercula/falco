@@ -13,8 +13,8 @@ falco({
   // entry: [{ js, css }],
   entry: {
     main: 'index.js',
-    data: treeData,
-    // path: dir,
+    // data: treeData,
+    path: dir,
   },
   moduleRules: [],
   registry: 'https://registry.npm.taobao.org',
@@ -23,13 +23,17 @@ falco({
     // 'react-dom': 'ReactDOM',
   },
   port: 8000, // 2222
-  // mode: 'developoment', // 'production'
+  mode: 'development', // 'production'
   esModules: true, // true
   cssModule: false, // false
 })
-  .then(({ js, sourceMap, dependencies }) => {
+  .then(({ code, sourceMap, dependencies }) => {
+    if (!code) {
+      return
+    }
+
     console.log(dependencies)
-    outputFileSync(join(__dirname, 'output.js'), js)
+    outputFileSync(join(__dirname, 'output.js'), code)
     if (sourceMap) {
       outputFileSync(join(__dirname, 'output.js.map'), sourceMap)
     }

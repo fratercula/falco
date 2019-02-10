@@ -37,6 +37,7 @@
     "fs-extra": "^7.0.1",
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
+    "minimist": "^1.2.0",
     "style-loader": "^0.23.1",
     "vue-loader": "^15.6.2",
     "vue-template-compiler": "^2.6.4",

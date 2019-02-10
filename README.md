@@ -74,24 +74,6 @@ const treeData = tree('path/to/codes/directory')
 }
 ```
 
-### moduleRules
-
-custom webpack loaders, type is `array`, default is `[]`
-
-example:
-
-```js
-{
-  moduleRules: [
-    {
-      test: /\.vue$/,
-      loader: path.resolve('../loader/path'),
-      options: vueLoaderConfig,
-    },
-  ],
-}
-```
-
 ### externals
 
 same as webpack externals config, type is `object`, default `{}`

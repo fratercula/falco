@@ -43,8 +43,8 @@ falco({ ...config, ...localConfig })
       return
     }
     logger.info(dependencies)
-    outputFileSync(join(__dirname, 'output.js'), code)
+    outputFileSync(join(cwd, 'output.js'), code)
     if (sourceMap) {
-      outputFileSync(join(__dirname, 'output.js.map'), sourceMap)
+      outputFileSync(join(cwd, 'output.js.map'), sourceMap)
     }
   })

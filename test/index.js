@@ -20,9 +20,9 @@ falco({
   },
   registry: 'https://registry.npm.taobao.org',
   externals: {
-    // react: 'React',
-    // 'react-dom': 'ReactDOM',
-    vue: 'Vue',
+    react: 'React',
+    'react-dom': 'ReactDOM',
+    vue: ['Vue', 'https://unpkg.com/vue/umd'],
   },
   port: 8000, // 2222
   // mode: 'development', // 'production'

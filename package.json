@@ -3,6 +3,15 @@
   "version": "0.1.0",
   "description": "JavaScript Transcoder",
   "main": "index.js",
+  "files": [
+    "bin",
+    "lib",
+    "index.js",
+    "!node_modules"
+  ],
+  "bin": {
+    "falco": "./bin/falco.js"
+  },
   "scripts": {
     "test": "cd test && node index.js"
   },

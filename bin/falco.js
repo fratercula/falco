@@ -48,3 +48,4 @@ falco({ ...config, ...localConfig })
       outputFileSync(join(cwd, 'output.js.map'), sourceMap)
     }
   })
+  .catch(({ message }) => logger.error(message))

@@ -5,6 +5,7 @@ const { outputFileSync } = require('fs-extra')
 const minimist = require('minimist')
 const logger = require('@acyort/logger')('falco')
 const falco = require('../lib/compiler')
+const { HTML } = require('../lib/config')
 
 const {
   p,
@@ -40,12 +41,15 @@ if (c) {
 falco({ ...config, ...localConfig })
   .then(({ code, sourceMap, dependencies }) => {
     if (!code) {
+      console.log('development')
       return
     }
-    logger.info(dependencies)
-    outputFileSync(join(cwd, 'output.js'), code)
+    const distDir = join(cwd, 'dist')
+    outputFileSync(join(distDir, 'index.html'), HTML.replace('$script$', dependencies
+      .map(src => `<script src="${src}"></script>`).join('\n')))
+    outputFileSync(join(distDir, 'output.js'), code)
     if (sourceMap) {
-      outputFileSync(join(cwd, 'output.js.map'), sourceMap)
+      outputFileSync(join(distDir, 'output.js.map'), sourceMap)
     }
   })
   .catch(({ message }) => logger.error(message))

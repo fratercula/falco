@@ -30,6 +30,9 @@
   "bugs": {
     "url": "https://github.com/fratercula/falco/issues"
   },
+  "engines": {
+    "node" : ">=7.10.1"
+  },
   "homepage": "https://github.com/fratercula/falco#readme",
   "dependencies": {
     "@acyort/logger": "^1.1.1",
@@ -46,6 +49,7 @@
     "fs-extra": "^7.0.1",
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
+    "madge": "^3.4.4",
     "minimist": "^1.2.0",
     "style-loader": "^0.23.1",
     "vue-loader": "^15.6.2",

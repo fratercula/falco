@@ -41,7 +41,6 @@ if (c) {
 falco({ ...config, ...localConfig })
   .then(({ code, sourceMap, dependencies }) => {
     if (!code) {
-      console.log('development')
       return
     }
     const distDir = join(cwd, 'dist')

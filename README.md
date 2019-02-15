@@ -22,7 +22,15 @@ const options = {
 
 ;(async () => {
   try {
-    const { code, sourceMap, dependencies } = await falco(options)
+    const {
+      code,
+      sourceMap,
+      dependencies,
+      template,
+      mode,
+    } = await falco(options)
+    // mode: development or production / string
+    // template: html template / string
     // code: converted code / string
     // sourceMap: filename is `output.js.map` / string
     // dependencies: package dependence / array
@@ -32,7 +40,7 @@ const options = {
 })()
 ```
 
-### Options
+## Options
 
 ### entry
 
@@ -78,6 +86,8 @@ const treeData = tree('path/to/codes/directory')
 
 same as webpack externals config, type is `object`, default `{}`
 
+you can set external `umd` url
+
 example:
 
 ```js
@@ -86,6 +96,10 @@ example:
     react: 'React',
     'react-dom': 'ReactDOM',
     'react-router-dom': 'ReactRouterDOM',
+    react: ['React', 'https://unpkg.com/react@16.7.0/umd/react.production.min.js'],
+    'react-dom': ['ReactDOM', 'https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js'],
+    vue: ['Vue', 'https://unpkg.com/vue@2.6.6/dist/vue.min.js'],
+    antd: ['antd', 'https://unpkg.com/moment@2.24.0/min/moment.min.js', 'https://unpkg.com/antd@3.13.0/dist/antd-with-locales.min.js'],
   },
 }
 ```
@@ -125,6 +139,27 @@ example:
   cssModule: false,
 }
 ```
+
+## CLI
+
+install
+
+```js
+$ npm i @fratercula/falco -g
+```
+
+use
+
+```bash
+$ falco -p 2222 -d -r https://registry.npm.taobao.org -c -m vue.js
+
+# p: server port, for development
+# d: development mode
+# r: option registry, set npm registry
+# m: build main entry
+# c: use local config: `falco.config.js`
+```
+
 
 ## License
 

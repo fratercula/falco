@@ -5,7 +5,7 @@ const { outputFileSync } = require('fs-extra')
 const minimist = require('minimist')
 const logger = require('@acyort/logger')('falco')
 const falco = require('../lib/compiler')
-const { HTML } = require('../lib/config')
+const external = require('../lib/helper/external')
 
 const {
   p,
@@ -44,8 +44,16 @@ falco({ ...config, ...localConfig })
       return
     }
     const distDir = join(cwd, 'dist')
-    outputFileSync(join(distDir, 'index.html'), HTML.replace('$script$', dependencies
-      .map(src => `<script src="${src}"></script>`).join('\n')))
+    const { externals, unpkg } = localConfig
+    const exts = {}
+
+    dependencies.forEach((name) => {
+      exts[name] = externals[name]
+    })
+
+    const { html } = external(exts, unpkg)
+
+    outputFileSync(join(distDir, 'index.html'), html)
     outputFileSync(join(distDir, 'output.js'), code)
     if (sourceMap) {
       outputFileSync(join(distDir, 'output.js.map'), sourceMap)

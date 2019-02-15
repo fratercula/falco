@@ -29,8 +29,8 @@ falco({
   esModules: true, // true
   cssModule: false, // false
 })
-  .then(({ code, sourceMap, dependencies }) => {
-    if (!code) {
+  .then(({ mode, code, sourceMap, dependencies, template }) => {
+    if (mode === 'development') {
       return
     }
 

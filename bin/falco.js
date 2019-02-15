@@ -14,7 +14,6 @@ const {
   m = 'index.js',
 } = minimist(process.argv.slice(2))
 const cwd = process.cwd()
-const mode = d ? 'development' : 'production'
 const port = Number(p) || undefined
 const config = {
   entry: {
@@ -23,7 +22,7 @@ const config = {
   },
   registry: r,
   port,
-  mode,
+  mode: d ? 'development' : 'production',
 }
 
 let localConfig = {}
@@ -37,17 +36,26 @@ if (c) {
   }
 }
 
-falco({ ...config, ...localConfig })
-  .then(({ code, sourceMap, template }) => {
-    if (!code) {
+try {
+  (async () => {
+    const {
+      mode,
+      code,
+      sourceMap,
+      template,
+    } = await falco({ ...config, ...localConfig })
+    const dist = join(cwd, 'dist')
+
+    if (mode === 'development') {
       return
     }
-    const distDir = join(cwd, 'dist')
 
-    outputFileSync(join(distDir, 'index.html'), template)
-    outputFileSync(join(distDir, 'output.js'), code)
+    outputFileSync(join(dist, 'index.html'), template)
+    outputFileSync(join(dist, 'output.js'), code)
     if (sourceMap) {
-      outputFileSync(join(distDir, 'output.js.map'), sourceMap)
+      outputFileSync(join(dist, 'output.js.map'), sourceMap)
     }
-  })
-  .catch(({ message }) => logger.error(message))
+  })()
+} catch ({ message }) {
+  logger.error(message)
+}

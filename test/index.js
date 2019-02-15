@@ -20,9 +20,10 @@ falco({
   },
   registry: 'https://registry.npm.taobao.org',
   externals: {
-    react: 'React',
-    'react-dom': 'ReactDOM',
-    vue: ['Vue', 'https://unpkg.com/vue/umd'],
+    react: ['React', 'https://unpkg.com/react@16.7.0/umd/react.production.min.js'],
+    'react-dom': ['ReactDOM', 'https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js'],
+    vue: ['Vue', 'https://unpkg.com/vue@2.6.6/dist/vue.min.js'],
+    antd: ['antd', 'https://unpkg.com/moment@2.24.0/min/moment.min.js', 'https://unpkg.com/antd@3.13.0/dist/antd-with-locales.min.js'],
   },
   port: 8000, // 2222
   // mode: 'development', // 'production'
@@ -30,11 +31,12 @@ falco({
   cssModule: false, // false
 })
   .then(({ mode, code, sourceMap, dependencies, template }) => {
+    console.log(mode, dependencies)
     if (mode === 'development') {
       return
     }
 
-    console.log(dependencies)
+    outputFileSync(join(__dirname, 'index.html'), template)
     outputFileSync(join(__dirname, 'output.js'), code)
     if (sourceMap) {
       outputFileSync(join(__dirname, 'output.js.map'), sourceMap)

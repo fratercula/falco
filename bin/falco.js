@@ -12,6 +12,7 @@ const {
   r,
   c,
   m = 'index.js',
+  t = 'index.html',
 } = minimist(process.argv.slice(2))
 const cwd = process.cwd()
 const port = Number(p) || undefined
@@ -20,6 +21,7 @@ const config = {
     main: m,
     path: cwd,
   },
+  template: join(cwd, t),
   registry: r,
   port,
   mode: d ? 'development' : 'production',

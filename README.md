@@ -29,6 +29,7 @@ const options = {
     vue: ['Vue', 'https://unpkg.com/vue@2.6.6/dist/vue.min.js'],
     antd: ['antd', 'https://unpkg.com/moment@2.24.0/min/moment.min.js', 'https://unpkg.com/antd@3.13.0/dist/antd-with-locales.min.js'],
   },
+  template: path.join(process.cwd(), 'index.html'),
   port: 8000,
   mode: 'development',
   esModules: true,
@@ -156,6 +157,18 @@ example:
 }
 ```
 
+### template
+
+set output `index.html` template
+
+example:
+
+```js
+{
+  template: 'path/to/html',
+}
+```
+
 ## CLI
 
 install
@@ -167,15 +180,22 @@ $ npm i @fratercula/falco -g
 use
 
 ```bash
-$ falco -p 2222 -d -r https://registry.npm.taobao.org -c -m vue.js
+$ falco -p 2222 -d -r https://registry.npm.taobao.org -c -m vue.js -t template.html
 
 # p: server port, for development mode. default 2222
 # d: set development mode
 # r: set npm registry
 # m: build main entry. default `index.js`
 # c: use local config: `falco.config.js`
+# t: set html template. default is `index.html`
 ```
 
+## Other
+
+- HTML template set default DOM `<div id="root"></div>`
+- file extension only support: js/css/less/vue/json
+- cache directory is `.__FALCO__`, you should ignore it
+- default output files name are `output.js`, `output.js.map` and `index.html`
 
 ## License
 

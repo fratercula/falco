@@ -15,8 +15,8 @@ falco({
   entry: {
     main: 'index.js',
     // data: treeData,
-    // path: dir,
-    path: vueDir,
+    path: dir,
+    // path: vueDir,
   },
   registry: 'https://registry.npm.taobao.org',
   externals: {
@@ -28,8 +28,8 @@ falco({
   port: 8000, // 2222
   template: join(__dirname, 'template.html'),
   // mode: 'development', // 'production'
-  tmpDir: join(__dirname, 'temp'),
-  esModules: true, // true
+  // tmpDir: join(__dirname, 'temp'),
+  // esModules: false, // true
   cssModule: false, // false
 })
   .then(({ mode, code, sourceMap, dependencies, template }) => {

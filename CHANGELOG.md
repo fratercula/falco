@@ -3,6 +3,7 @@
 ## 0.2.0
 
 - feat: tmpDir option
+- feat: script type module when `esModules` is true
 
 ## 0.1.1 ~ 0.1.3
 

@@ -192,10 +192,12 @@ $ falco -p 2222 -d -r https://registry.npm.taobao.org -c -m vue.js -t template.h
 
 ## Other
 
-- HTML template set default DOM `<div id="root"></div>`
-- file extension only support: js/css/less/vue/json
+- support `ES6+/React/Vue`
+- template set default DOM `<div id="root"></div>`
+- file extension only supports `js/css/less/vue/json`
 - cache directory is `.__FALCO__`, you should ignore it
-- default output files name are `output.js`, `output.js.map` and `index.html`
+- default output files name are `output.js`, `output.js.map` and `index.html`. output directory is `dist`
+- default externals umd url is `https://unpkg.com/${packageName}`
 
 ## License
 

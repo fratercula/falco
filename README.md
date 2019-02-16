@@ -16,8 +16,23 @@ const { tree } = require('@fratercula/falco')
 
 const treeData = tree('path/to/codes/directory')
 
+// see `options` below for more infomation
 const options = {
-  // see options below
+  entry: {
+    main: 'index.js',
+    path: 'path/to/build',
+  },
+  registry: 'https://registry.npm.taobao.org',
+  externals: {
+    react: ['React', 'https://unpkg.com/react@16.7.0/umd/react.production.min.js'],
+    'react-dom': ['ReactDOM', 'https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js'],
+    vue: ['Vue', 'https://unpkg.com/vue@2.6.6/dist/vue.min.js'],
+    antd: ['antd', 'https://unpkg.com/moment@2.24.0/min/moment.min.js', 'https://unpkg.com/antd@3.13.0/dist/antd-with-locales.min.js'],
+  },
+  port: 8000,
+  mode: 'development',
+  esModules: true,
+  cssModule: false,
 }
 
 ;(async () => {
@@ -154,10 +169,10 @@ use
 ```bash
 $ falco -p 2222 -d -r https://registry.npm.taobao.org -c -m vue.js
 
-# p: server port, for development mode
+# p: server port, for development mode. default 2222
 # d: set development mode
 # r: set npm registry
-# m: build main entry
+# m: build main entry. default `index.js`
 # c: use local config: `falco.config.js`
 ```
 

@@ -29,11 +29,11 @@ const options = {
       template,
       mode,
     } = await falco(options)
-    // mode: development or production / string
-    // template: html template / string
-    // code: converted code / string
-    // sourceMap: filename is `output.js.map` / string
-    // dependencies: package dependence / array
+    // mode: `development` or `production`
+    // template: html template, for production mode
+    // code: converted code
+    // sourceMap: filename is `output.js.map`
+    // dependencies: package dependencies
   } catch (e) {
     console.log(e)
   }
@@ -95,10 +95,11 @@ example:
   externals: {
     react: 'React',
     'react-dom': 'ReactDOM',
-    'react-router-dom': 'ReactRouterDOM',
+
+    // set window.React and `react` umd url
     react: ['React', 'https://unpkg.com/react@16.7.0/umd/react.production.min.js'],
-    'react-dom': ['ReactDOM', 'https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js'],
-    vue: ['Vue', 'https://unpkg.com/vue@2.6.6/dist/vue.min.js'],
+
+    // set window.antd, `antd` umd url and `antd` dependency `moment` umd url
     antd: ['antd', 'https://unpkg.com/moment@2.24.0/min/moment.min.js', 'https://unpkg.com/antd@3.13.0/dist/antd-with-locales.min.js'],
   },
 }
@@ -153,9 +154,9 @@ use
 ```bash
 $ falco -p 2222 -d -r https://registry.npm.taobao.org -c -m vue.js
 
-# p: server port, for development
-# d: development mode
-# r: option registry, set npm registry
+# p: server port, for development mode
+# d: set development mode
+# r: set npm registry
 # m: build main entry
 # c: use local config: `falco.config.js`
 ```

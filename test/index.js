@@ -28,6 +28,7 @@ falco({
   port: 8000, // 2222
   template: join(__dirname, 'template.html'),
   // mode: 'development', // 'production'
+  tmpDir: join(__dirname, 'temp'),
   esModules: true, // true
   cssModule: false, // false
 })

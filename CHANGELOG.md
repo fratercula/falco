@@ -2,6 +2,8 @@
 
 ## 0.2.0
 
+- feat: tmpDir option
+
 ## 0.1.1 ~ 0.1.3
 
 - feat: template option

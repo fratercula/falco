@@ -169,6 +169,18 @@ example:
 }
 ```
 
+### tmpDir
+
+set build temp directory, default is `path.join(process.cwd(), '.__FALCO__')`
+
+example:
+
+```js
+{
+  tmpDir: path.join(__dirname, 'temp'),
+}
+```
+
 ## CLI
 
 install
@@ -195,7 +207,7 @@ $ falco -p 2222 -d -r https://registry.npm.taobao.org -c -m vue.js -t template.h
 - support `ES6+/React/Vue`
 - template set default DOM `<div id="root"></div>`
 - file extension only supports `js/css/less/vue/json`
-- cache directory is `.__FALCO__`, you should ignore it
+- default temp directory is `.__FALCO__`, you should ignore it in `.gitignore`
 - default output files name are `output.js`, `output.js.map` and `index.html`. output directory is `dist`
 - default externals umd url is `https://unpkg.com/${packageName}`
 

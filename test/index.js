@@ -27,7 +27,8 @@ falco({
   },
   port: 8000, // 2222
   template: join(__dirname, 'template.html'),
-  // mode: 'development', // 'production'
+  mode: 'development', // 'production'
+  // type: 'vue', // 'react'
   // tmpDir: join(__dirname, 'temp'),
   // esModules: false, // true
   cssModule: false, // false

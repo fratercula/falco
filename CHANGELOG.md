@@ -4,6 +4,7 @@
 
 - feat: tmpDir option
 - feat: script type module when `esModules` is true
+- feat: type option, support vue `jsx`
 
 ## 0.1.1 ~ 0.1.3
 

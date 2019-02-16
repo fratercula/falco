@@ -1,13 +1,12 @@
-<template>
-  <div>{{ title }}</div>
-</template>
-
 <script>
 export default {
   data() {
     return {
-      title: 'Vuex'
+      title: 'Vue'
     }
+  },
+  render() {
+    return <p>hello { this.title }</p>
   }
 }
 </script>

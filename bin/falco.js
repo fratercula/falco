@@ -32,9 +32,9 @@ let localConfig = {}
 if (c) {
   try {
     // eslint-disable-next-line global-require, import/no-dynamic-require
-    localConfig = require(join(cwd, 'palco.config.js'))
-  } catch (e) {
-    logger.info(e.message)
+    localConfig = require(join(cwd, 'falco.config.js'))
+  } catch ({ message }) {
+    logger.error(message)
   }
 }
 

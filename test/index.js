@@ -7,7 +7,37 @@ const dir = join(__dirname, 'example')
 const vueDir = join(__dirname, 'vue')
 const tsDir = join(__dirname, 'ts')
 
-const js = 'console.log(1)'
+const js = `  class A {
+  state = 1
+
+  log() {
+    console.log(this.state)
+  }
+}
+
+new A().log()
+
+let { x, y, ...z } = { x: 1, y: 2, a: 3, b: 4 };
+console.log(x); // 1
+console.log(y); // 2
+console.log(z); // { a: 3, b: 4 }
+
+function testable(isTestable) {
+  return function(target) {
+    target.isTestable = isTestable;
+  }
+}
+
+@testable(true)
+class MyTestableClass {}
+
+console.log(MyTestableClass.isTestable) // true
+
+;(async () => {
+  await console.log(1)
+  console.log(2)
+})()
+`
 const css = 'body { background: grey; }'
 const ts = 'const x: number = 0; console.log(x)'
 const less = `@width: 10px;
@@ -31,15 +61,15 @@ falco({
   // entry: [{ js, css }],
   entry: {
     main: 'index.js',
-    data: treeData,
-    // path: dir,
+    // data: treeData,
+    path: dir,
     // path: vueDir,
     // main: 'index.tsx',
     // path: tsDir,
   },
   registry: 'https://registry.npm.taobao.org',
   externals: {
-    // react: ['React', 'https://unpkg.com/react@16.7.0/umd/react.production.min.js'],
+    react: ['React', 'https://unpkg.com/react@16.7.0/umd/react.production.min.js'],
     'react-dom': ['ReactDOM', 'https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js'],
     vue: ['Vue', 'https://unpkg.com/vue@2.6.6/dist/vue.min.js'],
     antd: ['antd', 'https://unpkg.com/moment@2.24.0/min/moment.min.js', 'https://unpkg.com/antd@3.13.0/dist/antd-with-locales.min.js'],

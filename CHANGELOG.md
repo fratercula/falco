@@ -7,6 +7,7 @@
 - feat: support vue `jsx`
 - feat: use system tmp dir for cache
 - feat: typescript support
+- fix: babel runtime resolve error
 
 ## 0.1.1 ~ 0.1.3
 

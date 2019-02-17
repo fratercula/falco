@@ -6,6 +6,7 @@
 - feat: script type module when `esModules` is true
 - feat: type option, support vue `jsx`
 - feat: use system tmp dir for cache
+- feat: typescript support
 
 ## 0.1.1 ~ 0.1.3
 

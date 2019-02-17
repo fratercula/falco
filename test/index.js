@@ -5,18 +5,37 @@ const { tree } = require('../')
 
 const dir = join(__dirname, 'example')
 const vueDir = join(__dirname, 'vue')
+const tsDir = join(__dirname, 'ts')
+
 const js = 'console.log(1)'
 const css = 'body { background: grey; }'
+const ts = 'const x: number = 0; console.log(x)'
+const less = `@width: 10px;
+@height: @width + 10px;
+
+body {
+  background: red;
+  width: @width;
+  height: @height;
+}
+`
+
 const treeData = tree(dir)
 
 falco({
-  // entry: { js, css },
+  // entry: {
+  //   js: ts,
+  //   type: 'ts', // js/jsx/ts/tsx, 'js'
+  //   css: less,
+  // },
   // entry: [{ js, css }],
   entry: {
-    main: 'index.js',
+    // main: 'index.js',
     // data: treeData,
-    path: dir,
+    // path: dir,
     // path: vueDir,
+    main: 'index.tsx',
+    path: tsDir,
   },
   registry: 'https://registry.npm.taobao.org',
   externals: {

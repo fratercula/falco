@@ -218,6 +218,7 @@ $ falco -p 2222 -d -r https://registry.npm.taobao.org -c -m vue.js -t template.h
 
 - support `ES6+/React/Vue`
 - template set default DOM `<div id="root"></div>`
+- css preprocessor only support `less`
 - file extension only supports `js/css/less/vue/json`
 - default output files name are `output.js`, `output.js.map` and `index.html`. output directory is `dist`
 - default externals umd url is `https://unpkg.com/${packageName}`

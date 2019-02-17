@@ -98,18 +98,6 @@ const treeData = tree('path/to/codes/directory')
 }
 ```
 
-### type
-
-build type, `vue` or `react`, default is `react`
-
-example:
-
-```js
-{
-  type: 'vue',
-}
-```
-
 ### externals
 
 same as webpack externals config, type is `object`, default `{}`

@@ -30,24 +30,23 @@ falco({
   // },
   // entry: [{ js, css }],
   entry: {
-    // main: 'index.js',
-    // data: treeData,
+    main: 'index.js',
+    data: treeData,
     // path: dir,
     // path: vueDir,
-    main: 'index.tsx',
-    path: tsDir,
+    // main: 'index.tsx',
+    // path: tsDir,
   },
   registry: 'https://registry.npm.taobao.org',
   externals: {
-    react: ['React', 'https://unpkg.com/react@16.7.0/umd/react.production.min.js'],
+    // react: ['React', 'https://unpkg.com/react@16.7.0/umd/react.production.min.js'],
     'react-dom': ['ReactDOM', 'https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js'],
     vue: ['Vue', 'https://unpkg.com/vue@2.6.6/dist/vue.min.js'],
     antd: ['antd', 'https://unpkg.com/moment@2.24.0/min/moment.min.js', 'https://unpkg.com/antd@3.13.0/dist/antd-with-locales.min.js'],
   },
   port: 8000, // 2222
   template: join(__dirname, 'template.html'),
-  mode: 'development', // 'production'
-  // type: 'vue', // 'react'
+  // mode: 'development', // 'production'
   // tmpDir: join(__dirname, 'temp'),
   // esModules: false, // true
   cssModule: false, // false

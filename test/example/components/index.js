@@ -1,4 +1,4 @@
-// import './index.less'
+// import 'reset-css/less/reset.less'
 
 export default () => {
   class A {

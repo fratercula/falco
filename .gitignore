@@ -1,7 +1,6 @@
 node_modules/
 package-lock.json
 .DS_Store
-.__FALCO__/
 test/output.js
 test/output.js.map
 test/index.html

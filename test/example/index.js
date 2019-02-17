@@ -2,7 +2,6 @@ import staff from './components'
 import React from 'react'
 import { render } from 'react-dom'
 import { Button } from 'antd'
-import 'reset-css/less/reset.less'
 
 import style from './index.css'
 

@@ -98,6 +98,18 @@ const treeData = tree('path/to/codes/directory')
 }
 ```
 
+### type
+
+build type, `vue` or `react`, default is `react`
+
+example:
+
+```js
+{
+  type: 'vue',
+}
+```
+
 ### externals
 
 same as webpack externals config, type is `object`, default `{}`
@@ -171,7 +183,7 @@ example:
 
 ### tmpDir
 
-set build temp directory, default is `path.join(process.cwd(), '.__FALCO__')`
+set build temp directory, default is `os.tmpDir()`
 
 example:
 
@@ -207,7 +219,6 @@ $ falco -p 2222 -d -r https://registry.npm.taobao.org -c -m vue.js -t template.h
 - support `ES6+/React/Vue`
 - template set default DOM `<div id="root"></div>`
 - file extension only supports `js/css/less/vue/json`
-- default temp directory is `.__FALCO__`, you should ignore it in `.gitignore`
 - default output files name are `output.js`, `output.js.map` and `index.html`. output directory is `dist`
 - default externals umd url is `https://unpkg.com/${packageName}`
 

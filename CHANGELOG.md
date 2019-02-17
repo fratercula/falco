@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.1
+
+- fix: webpack optimization.minimizer cache dir
+
 ## 0.2.0
 
 - feat: tmpDir option

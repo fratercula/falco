@@ -1,6 +1,6 @@
 {
   "name": "@fratercula/falco",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "JavaScript Transcoder",
   "main": "index.js",
   "files": [
@@ -54,6 +54,7 @@
     "less-loader": "^4.1.0",
     "minimist": "^1.2.0",
     "style-loader": "^0.23.1",
+    "terser-webpack-plugin": "^1.2.2",
     "vue-loader": "^15.6.2",
     "vue-template-compiler": "^2.6.4",
     "webpack": "^4.28.4",

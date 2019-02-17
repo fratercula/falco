@@ -1,8 +1,9 @@
 # Changelog
 
-## 0.2.1
+## 0.2.1 ~ 0.2.2
 
 - fix: webpack optimization.minimizer cache dir
+- fix: externals packages order
 
 ## 0.2.0
 

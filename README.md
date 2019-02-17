@@ -24,10 +24,7 @@ const options = {
   },
   registry: 'https://registry.npm.taobao.org',
   externals: {
-    react: ['React', 'https://unpkg.com/react@16.7.0/umd/react.production.min.js'],
-    'react-dom': ['ReactDOM', 'https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js'],
-    vue: ['Vue', 'https://unpkg.com/vue@2.6.6/dist/vue.min.js'],
-    antd: ['antd', 'https://unpkg.com/moment@2.24.0/min/moment.min.js', 'https://unpkg.com/antd@3.13.0/dist/antd-with-locales.min.js'],
+    // ...
   },
   template: path.join(process.cwd(), 'index.html'),
   port: 8000,
@@ -108,16 +105,30 @@ example:
 
 ```js
 {
-  externals: {
-    react: 'React',
-    'react-dom': 'ReactDOM',
-
-    // set window.React and `react` umd url
-    react: ['React', 'https://unpkg.com/react@16.7.0/umd/react.production.min.js'],
-
-    // set window.antd, `antd` umd url and `antd` dependency `moment` umd url
-    antd: ['antd', 'https://unpkg.com/moment@2.24.0/min/moment.min.js', 'https://unpkg.com/antd@3.13.0/dist/antd-with-locales.min.js'],
-  },
+  // note the order in sequence
+  externals: [
+    {
+      name: 'react', // package name
+      root: 'React', // window.React
+      urls: ['https://unpkg.com/react@16.7.0/umd/react.production.min.js'], // umd url
+    },
+    {
+      name: 'react-dom',
+      root: 'ReactDOM',
+      urls: ['https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js'],
+    },
+    // use `https://unpkg.com/vue`
+    {
+      name: 'vue',
+      root: 'Vue',
+    },
+    {
+      name: 'antd',
+      root: 'antd',
+      // `moment` is `antd` dependency
+      urls: ['https://unpkg.com/moment@2.24.0/min/moment.min.js', 'https://unpkg.com/antd@3.13.0/dist/antd-with-locales.min.js'],
+    },
+  ],
 }
 ```
 

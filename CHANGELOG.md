@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.0
+
+- feat: auto install miss modules
+
 ## 0.2.1 ~ 0.2.3
 
 - fix: webpack optimization.minimizer cache dir

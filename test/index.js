@@ -62,8 +62,8 @@ falco({
   entry: {
     main: 'index.js',
     // data: treeData,
-    // path: dir,
-    path: vueDir,
+    path: dir,
+    // path: vueDir,
     // main: 'index.tsx',
     // path: tsDir,
   },

@@ -97,7 +97,7 @@ const treeData = tree('path/to/codes/directory')
 
 ### externals
 
-same as webpack externals config, type is `object`, default `{}`
+modules external config, default `[]`
 
 you can set external `umd` url
 

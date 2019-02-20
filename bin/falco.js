@@ -38,8 +38,8 @@ if (c) {
   }
 }
 
-try {
-  (async () => {
+(async () => {
+  try {
     const {
       mode,
       code,
@@ -57,7 +57,7 @@ try {
     if (sourceMap) {
       outputFileSync(join(dist, 'output.js.map'), sourceMap)
     }
-  })()
-} catch ({ message }) {
-  logger.error(message)
-}
+  } catch ({ message }) {
+    logger.error(message)
+  }
+})()

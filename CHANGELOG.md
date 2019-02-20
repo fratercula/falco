@@ -3,6 +3,7 @@
 ## 0.3.0
 
 - feat: auto install miss modules
+- fix: cli catch errors
 
 ## 0.2.1 ~ 0.2.3
 

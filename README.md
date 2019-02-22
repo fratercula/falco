@@ -132,6 +132,20 @@ example:
 }
 ```
 
+### versions
+
+set npm install packages versions
+
+example:
+
+```js
+{
+  versions: {
+    react: '^13.5.9',
+  },
+}
+```
+
 ### registry
 
 set npm registry

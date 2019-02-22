@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.1
+
+- feat: versions option
+
 ## 0.3.0
 
 - feat: auto install miss modules

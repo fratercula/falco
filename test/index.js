@@ -89,6 +89,9 @@ falco({
       urls: ['https://unpkg.com/moment@2.24.0/min/moment.min.js', 'https://unpkg.com/antd@3.13.0/dist/antd-with-locales.min.js'],
     },
   ],
+  versions: {
+    five: '~0.4.0',
+  },
   // port: 8000, // 2222
   template: join(__dirname, 'template.html'),
   mode: 'development', // 'production'

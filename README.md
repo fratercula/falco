@@ -12,9 +12,6 @@ $ npm i @fratercula/falco
 
 ```js
 const falco = require('@fratercula/falco')
-const { tree } = require('@fratercula/falco')
-
-const treeData = tree('path/to/codes/directory')
 
 // see `options` below for more infomation
 const options = {
@@ -82,26 +79,11 @@ example:
     path: '/path/to/your/codes/directory',
   },
 }
-
-// directory files tree data
-const { tree } = require('@fratercula/falco')
-const treeData = tree('path/to/codes/directory')
-
-{
-  entry: {
-    main: 'index.js',
-    data: treeData,
-  },
-}
 ```
 
 ### externals
 
-modules external config, default `[]`
-
-you can set external `umd` url
-
-example:
+modules external config, default `[]`. you can set external `umd` url
 
 ```js
 {
@@ -136,8 +118,6 @@ example:
 
 set npm install packages versions
 
-example:
-
 ```js
 {
   versions: {
@@ -150,8 +130,6 @@ example:
 
 set npm registry
 
-example:
-
 ```js
 {
   registry: 'https://registry.npm.taobao.org',
@@ -160,9 +138,7 @@ example:
 
 ### esModules
 
-@babel/preset-env [option](https://babeljs.io/docs/en/babel-preset-env#targetsesmodules), default is `true`
-
-example:
+[@babel/preset-env](https://babeljs.io/docs/en/babel-preset-env#targetsesmodules) option, default is `true`
 
 ```js
 {
@@ -174,8 +150,6 @@ example:
 
 [css module](https://github.com/css-modules/css-modules), default is `false`
 
-example:
-
 ```js
 {
   cssModule: false,
@@ -185,8 +159,6 @@ example:
 ### template
 
 set output `index.html` template
-
-example:
 
 ```js
 {
@@ -198,11 +170,19 @@ example:
 
 set build temp directory, default is `os.tmpDir()`
 
-example:
-
 ```js
 {
   tmpDir: path.join(__dirname, 'temp'),
+}
+```
+
+### cache
+
+set if remove `node_modules` before `npm install`, set `false` will remove. default is `true`
+
+```js
+{
+  cache: false,
 }
 ```
 

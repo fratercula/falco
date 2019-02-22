@@ -1,7 +1,6 @@
 const { join } = require('path')
 const { outputFileSync } = require('fs-extra')
 const falco = require('../')
-const { tree } = require('../')
 
 const dir = join(__dirname, 'example')
 const vueDir = join(__dirname, 'vue')
@@ -50,23 +49,21 @@ body {
 }
 `
 
-const treeData = tree(dir)
-
 falco({
   // entry: {
   //   js: ts,
   //   type: 'ts', // js/jsx/ts/tsx, 'js'
   //   css: less,
   // },
-  // entry: [{ js, css }],
-  entry: {
-    main: 'index.js',
-    data: treeData,
-    // path: dir,
-    // path: vueDir,
-    // main: 'index.tsx',
-    // path: tsDir,
-  },
+  entry: [{ js, css }],
+  // entry: {
+  //   main: 'index.js',
+  //   // main: 'index.tsx',
+
+  //   path: dir,
+  //   // path: vueDir,
+  //   // path: tsDir,
+  // },
   registry: 'https://registry.npm.taobao.org',
   externals: [
     {

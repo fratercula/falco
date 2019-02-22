@@ -1,8 +1,10 @@
 # Changelog
 
-## 0.3.1
+## 0.4.0
 
 - feat: versions option
+- feat: cache option
+- feat: remove tree data support
 
 ## 0.3.0
 

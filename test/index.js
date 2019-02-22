@@ -92,10 +92,11 @@ falco({
   versions: {
     five: '~0.4.0',
   },
+  // cache: false, // true
   // port: 8000, // 2222
   template: join(__dirname, 'template.html'),
   mode: 'development', // 'production'
-  // tmpDir: join(__dirname, 'temp'),
+  tmpDir: join(__dirname, 'temp'),
   // esModules: false, // true
   cssModule: false, // false
 })

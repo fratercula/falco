@@ -4,3 +4,4 @@ package-lock.json
 test/output.js
 test/output.js.map
 test/index.html
+test/temp/

@@ -58,15 +58,15 @@ falco({
   //   type: 'ts', // js/jsx/ts/tsx, 'js'
   //   css: less,
   // },
-  // entry: [{ js, css }],
   entry: {
     main: 'index.js',
-  //   // main: 'index.tsx',
+    // main: 'index.tsx',
 
     path: dir,
-  //   // path: vueDir,
-  //   // path: tsDir,
+    // path: vueDir,
+    // path: tsDir,
   },
+  entry: [{ js, css }],
   registry: 'https://registry.npm.taobao.org',
   externals: [
     {

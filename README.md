@@ -207,6 +207,19 @@ set if remove `node_modules` before `npm install`, set `false` will remove. defa
 }
 ```
 
+### output
+
+webpack [output](https://webpack.js.org/configuration/output/) option. Cannot set `filename` and `path`
+
+```js
+{
+  output: {
+    library: 'someLibName',
+    libraryTarget: 'umd',
+  }
+}
+```
+
 ## Other
 
 - support `ES6+/React/Vue/TypeScript`

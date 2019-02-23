@@ -6,6 +6,7 @@
 - feat: cache option
 - feat: remove tree data support
 - refactor: remove memory-fs, remove resolveMdoules option
+- feat: output option
 
 ## 0.3.0
 

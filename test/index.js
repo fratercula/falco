@@ -51,6 +51,13 @@ body {
 }
 `
 
+const umd = `
+import React from 'react'
+export default function () {
+  return (<div></div>)
+}
+`
+
 falco({
   // entry: {
   //   js: ts,
@@ -66,6 +73,8 @@ falco({
     // path: tsDir,
   },
   // entry: [{ js, css }],
+  entry: { js: umd },
+  output: { library: 'Ta', libraryTarget: 'umd' }, // {}
   registry: 'https://registry.npm.taobao.org',
   externals: [
     {

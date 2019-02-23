@@ -1,6 +1,6 @@
 # Falco
 
-JavaScript Transcoder
+JavaScript Transcoder, build codes with `zero` configuration
 
 ## Install
 
@@ -48,6 +48,27 @@ const options = {
     console.log(e)
   }
 })()
+```
+
+## CLI
+
+install
+
+```js
+$ npm i @fratercula/falco -g
+```
+
+use
+
+```bash
+$ falco -p 2222 -d -r https://registry.npm.taobao.org -c -m vue.js -t template.html
+
+# p: server port, for development mode. default 2222
+# d: set development mode
+# r: set npm registry
+# m: build entry. default `index.js`
+# c: use local config: `falco.config.js`
+# t: set html template. default is `index.html`
 ```
 
 ## Options
@@ -186,30 +207,9 @@ set if remove `node_modules` before `npm install`, set `false` will remove. defa
 }
 ```
 
-## CLI
-
-install
-
-```js
-$ npm i @fratercula/falco -g
-```
-
-use
-
-```bash
-$ falco -p 2222 -d -r https://registry.npm.taobao.org -c -m vue.js -t template.html
-
-# p: server port, for development mode. default 2222
-# d: set development mode
-# r: set npm registry
-# m: build entry. default `index.js`
-# c: use local config: `falco.config.js`
-# t: set html template. default is `index.html`
-```
-
 ## Other
 
-- support `ES6+/React/Vue`
+- support `ES6+/React/Vue/TypeScript`
 - template set default DOM `<div id="root"></div>`
 - css preprocessor only support `less`
 - file extension supports `js/jsx/ts/tsx/css/less/vue/json`

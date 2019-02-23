@@ -8,7 +8,6 @@ const tsDir = join(__dirname, 'ts')
 
 const js = `
 import five from 'five'
-console.log(five())
 class A {
   state = 1
 
@@ -66,7 +65,7 @@ falco({
     // path: vueDir,
     // path: tsDir,
   },
-  entry: [{ js, css }],
+  // entry: [{ js, css }],
   registry: 'https://registry.npm.taobao.org',
   externals: [
     {
@@ -89,7 +88,7 @@ falco({
       urls: ['https://unpkg.com/moment@2.24.0/min/moment.min.js', 'https://unpkg.com/antd@3.13.0/dist/antd-with-locales.min.js'],
     },
   ],
-  versions: {
+  packages: {
     five: '*',
   },
   cache: false, // true

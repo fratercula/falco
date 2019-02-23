@@ -135,13 +135,13 @@ modules external config, default `[]`. you can set external `umd` url
 }
 ```
 
-### versions
+### packages
 
-set npm install packages versions
+set npm install packages version. All packages list here will be installed, and ignore externals
 
 ```js
 {
-  versions: {
+  packages: {
     react: '^13.5.9',
   },
 }

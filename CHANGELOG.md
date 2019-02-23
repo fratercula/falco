@@ -2,7 +2,7 @@
 
 ## 0.4.0
 
-- feat: versions option
+- feat: packages option
 - feat: cache option
 - feat: remove tree data support
 - refactor: remove memory-fs, remove resolveMdoules option

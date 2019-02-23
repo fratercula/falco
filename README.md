@@ -113,15 +113,15 @@ modules external config, default `[]`. you can set external `umd` url
     {
       name: 'react', // package name
       root: 'React', // window.React
-      urls: ['https://unpkg.com/react@16.7.0/umd/react.production.min.js'], // umd url
+      urls: 'https://unpkg.com/react@16.7.0/umd/react.production.min.js', // umd url
     },
     {
       name: 'react-dom',
       root: 'ReactDOM',
-      urls: ['https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js'],
+      urls: 'https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js',
     },
-    // use `https://unpkg.com/vue`
     {
+      // use `https://unpkg.com/vue`
       name: 'vue',
       root: 'Vue',
     },

@@ -6,7 +6,10 @@ const dir = join(__dirname, 'example')
 const vueDir = join(__dirname, 'vue')
 const tsDir = join(__dirname, 'ts')
 
-const js = `  class A {
+const js = `
+import five from 'five'
+console.log(five())
+class A {
   state = 1
 
   log() {
@@ -55,26 +58,26 @@ falco({
   //   type: 'ts', // js/jsx/ts/tsx, 'js'
   //   css: less,
   // },
-  entry: [{ js, css }],
-  // entry: {
-  //   main: 'index.js',
+  // entry: [{ js, css }],
+  entry: {
+    main: 'index.js',
   //   // main: 'index.tsx',
 
-  //   path: dir,
+    path: dir,
   //   // path: vueDir,
   //   // path: tsDir,
-  // },
+  },
   registry: 'https://registry.npm.taobao.org',
   externals: [
     {
       name: 'react',
       root: 'React',
-      urls: ['https://unpkg.com/react@16.7.0/umd/react.production.min.js'],
+      urls: 'https://unpkg.com/react@16.7.0/umd/react.production.min.js',
     },
     {
       name: 'react-dom',
       root: 'ReactDOM',
-      urls: ['https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js'],
+      urls: 'https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js',
     },
     {
       name: 'vue',
@@ -87,13 +90,13 @@ falco({
     },
   ],
   versions: {
-    five: '~0.4.0',
+    five: '*',
   },
-  // cache: false, // true
+  cache: false, // true
   // port: 8000, // 2222
   template: join(__dirname, 'template.html'),
   mode: 'development', // 'production'
-  tmpDir: join(__dirname, 'temp'),
+  // tmpDir: join(__dirname, 'temp'),
   // esModules: false, // true
   cssModule: false, // false
 })

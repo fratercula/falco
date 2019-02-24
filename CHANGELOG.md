@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.4.0 ~ 0.4.1
+## 0.4.0 ~ 0.4.2
 
 - feat: packages option
 - feat: cache option

@@ -1,6 +1,6 @@
 {
   "name": "@fratercula/falco",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "JavaScript Transcoder",
   "main": "index.js",
   "files": [

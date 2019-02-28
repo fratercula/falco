@@ -5,6 +5,7 @@ const { outputFileSync } = require('fs-extra')
 const minimist = require('minimist')
 const logger = require('@acyort/logger')('falco')
 const falco = require('../lib/compiler')
+const { OUTPUT } = require('../lib/config')
 
 const {
   p,
@@ -54,14 +55,14 @@ if (c) {
       return
     }
 
-    if (options.output.libraryTarget !== 'umd') {
+    if (options.output.libraryTarget === undefined) {
       outputFileSync(join(dist, 'index.html'), template)
     }
 
-    outputFileSync(join(dist, 'output.js'), code)
+    outputFileSync(join(dist, OUTPUT), code)
 
     if (sourceMap) {
-      outputFileSync(join(dist, 'output.js.map'), sourceMap)
+      outputFileSync(join(dist, `${OUTPUT}.map`), sourceMap)
     }
   } catch ({ message }) {
     logger.error(message)

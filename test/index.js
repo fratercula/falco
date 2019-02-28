@@ -103,8 +103,8 @@ falco({
   cache: false, // true
   // port: 8000, // 2222
   template: join(__dirname, 'template.html'),
-  mode: 'development', // 'production'
-  // tmpDir: join(__dirname, 'temp'),
+  // mode: 'development', // 'production'
+  tmpDir: join(__dirname, 'temp'),
   // esModules: false, // true
   cssModule: false, // false
 })

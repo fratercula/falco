@@ -61,7 +61,7 @@ $ npm i @fratercula/falco -g
 use
 
 ```bash
-$ falco -p 2222 -d -r https://registry.npm.taobao.org -c -m vue.js -t template.html
+$ falco -p 2222 -d -r https://registry.npm.taobao.org -c -m vue.js -t template.html -o lib
 
 # p: server port, for development mode. default 2222
 # d: set development mode
@@ -69,6 +69,7 @@ $ falco -p 2222 -d -r https://registry.npm.taobao.org -c -m vue.js -t template.h
 # m: build entry. default `index.js`
 # c: use local config: `falco.config.js`
 # t: set html template. default is `index.html`
+# o: set output path, default is `dist`
 ```
 
 ## Options

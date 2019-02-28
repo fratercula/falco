@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.4.0 ~ 0.4.2
+## 0.4.0 ~ 0.4.3
 
 - feat: packages option
 - feat: cache option
@@ -8,6 +8,7 @@
 - refactor: remove memory-fs, remove resolveMdoules option
 - feat: output option
 - fix: npm install log
+- feat: cli output option
 
 ## 0.3.0
 

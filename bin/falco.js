@@ -11,6 +11,7 @@ const {
   d,
   r,
   c,
+  o = 'dist',
   m = 'index.js',
   t = 'index.html',
 } = minimist(process.argv.slice(2))
@@ -40,20 +41,25 @@ if (c) {
 
 (async () => {
   try {
+    const options = { output: {}, ...config, ...localConfig }
     const {
       mode,
       code,
       sourceMap,
       template,
-    } = await falco({ ...config, ...localConfig })
-    const dist = join(cwd, 'dist')
+    } = await falco(options)
+    const dist = join(cwd, o)
 
     if (mode === 'development') {
       return
     }
 
-    outputFileSync(join(dist, 'index.html'), template)
+    if (options.output.libraryTarget !== 'umd') {
+      outputFileSync(join(dist, 'index.html'), template)
+    }
+
     outputFileSync(join(dist, 'output.js'), code)
+
     if (sourceMap) {
       outputFileSync(join(dist, 'output.js.map'), sourceMap)
     }

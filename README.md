@@ -114,6 +114,9 @@ modules external config, default `[]`. you can set external `umd` url
     {
       name: 'react', // package name
       root: 'React', // window.React
+      commonjs2: 'react',
+      commonjs: 'react',
+      amd: 'react',
       urls: 'https://unpkg.com/react@16.7.0/umd/react.production.min.js', // umd url
     },
     {

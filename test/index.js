@@ -53,6 +53,7 @@ body {
 
 const umd = `
 import React from 'react'
+import ReactDOM from 'react-dom'
 export default function () {
   return (<div></div>)
 }
@@ -80,11 +81,17 @@ falco({
     {
       name: 'react',
       root: 'React',
+      commonjs2: 'react',
+      commonjs: 'react',
+      amd: 'react',
       urls: 'https://unpkg.com/react@16.7.0/umd/react.production.min.js',
     },
     {
       name: 'react-dom',
       root: 'ReactDOM',
+      commonjs2: 'react-dom',
+      commonjs: 'react-dom',
+      amd: 'react-dom',
       urls: 'https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js',
     },
     {
@@ -98,12 +105,12 @@ falco({
     },
   ],
   packages: {
-    five: '*',
+    // five: '*',
   },
   cache: false, // true
   // port: 8000, // 2222
   template: join(__dirname, 'template.html'),
-  // mode: 'development', // 'production'
+  mode: 'development', // 'production'
   tmpDir: join(__dirname, 'temp'),
   // esModules: false, // true
   cssModule: false, // false

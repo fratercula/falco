@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.5
+
+- fix: webpack externals
+
 ## 0.4.0 ~ 0.4.4
 
 - feat: packages option

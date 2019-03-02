@@ -7,5 +7,4 @@ import style from './index.css'
 
 staff()
 
-console.log('react')
 render(<Button className={style.button} type="primary">Hello World</Button>, document.querySelector('#root'))

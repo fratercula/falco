@@ -213,7 +213,8 @@ set if remove `node_modules` before `npm install`, set `false` will remove. defa
 
 ### output
 
-webpack [output](https://webpack.js.org/configuration/output/) option. Cannot set `filename` and `path`
+webpack [output](https://webpack.js.org/configuration/output/) option
+cannot set `filename` and `path`
 
 ```js
 {
@@ -226,11 +227,11 @@ webpack [output](https://webpack.js.org/configuration/output/) option. Cannot se
 
 ## Other
 
-- support `ES6+/React/Vue/TypeScript`
+- support `ES6+/React/Vue/TypeScript/Less`
 - template set default DOM `<div id="root"></div>`
 - css preprocessor only support `less`
 - file extension supports `js/jsx/ts/tsx/css/less/vue/json`
-- default output files name are `output.js`, `output.js.map` and `index.html`. output directory is `dist`
+- default output files name are `index.js`, `index.js.map` and `index.html`. output directory is `dist`
 - default externals umd url is `https://unpkg.com/${packageName}`
 
 ## License

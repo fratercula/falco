@@ -225,6 +225,16 @@ cannot set `filename` and `path`
 }
 ```
 
+### vue
+
+it will automatic detection of using `vue` normally, but cannot detect in `circular dependency`
+
+```js
+{
+  vue: false, // not used vue
+}
+```
+
 ## Other
 
 - support `ES6+/React/Vue/TypeScript/Less`

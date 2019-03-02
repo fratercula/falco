@@ -1,8 +1,10 @@
 # Changelog
 
-## 0.4.5 ~ 0.4.6
+## 0.4.5 ~ 0.4.7
 
 - fix: webpack externals
+- fix: entry circular dependency
+- feat: add vue option
 
 ## 0.4.0 ~ 0.4.4
 

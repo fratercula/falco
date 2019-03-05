@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.8
+
+- fix: commonjs
+
 ## 0.4.5 ~ 0.4.7
 
 - fix: webpack externals

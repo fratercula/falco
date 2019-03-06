@@ -33,16 +33,14 @@ const options = {
 ;(async () => {
   try {
     const {
-      code,
-      sourceMap,
+      codes,
       dependencies,
       template,
       mode,
     } = await falco(options)
     // mode: `development` or `production`
     // template: html template, for production mode
-    // code: converted code
-    // sourceMap: filename is `output.js.map`
+    // codes: converted code, and sourceMap
     // dependencies: package dependencies
   } catch (e) {
     console.log(e)
@@ -214,11 +212,12 @@ set if remove `node_modules` before `npm install`, set `false` will remove. defa
 ### output
 
 webpack [output](https://webpack.js.org/configuration/output/) option
-cannot set `filename` and `path`
+cannot set `path`
 
 ```js
 {
   output: {
+    filename: 'index.[hash:8].js',
     library: 'someLibName',
     libraryTarget: 'umd',
   }
@@ -243,6 +242,7 @@ it will automatic detection of using `vue` normally, but cannot detect in `circu
 - file extension supports `js/jsx/ts/tsx/css/less/vue/json`
 - default output files name are `index.js`, `index.js.map` and `index.html`. output directory is `dist`
 - default externals umd url is `https://unpkg.com/${packageName}`
+- not support webpack multiple entry
 
 ## License
 

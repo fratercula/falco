@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.5.0
+
+- feat: output filename option
+- refactor: codes arguments
+
 ## 0.4.8
 
 - fix: commonjs

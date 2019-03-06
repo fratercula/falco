@@ -65,17 +65,21 @@ falco({
   //   type: 'ts', // js/jsx/ts/tsx, 'js'
   //   css: less,
   // },
-  entry: {
-    main: 'index.js',
-    // main: 'index.tsx',
+  // entry: {
+  //   main: 'index.js',
+  //   // main: 'index.tsx',
 
-    path: dir,
-    // path: vueDir,
-    // path: tsDir,
-  },
+  //   path: dir,
+  //   // path: vueDir,
+  //   // path: tsDir,
+  // },
   // entry: [{ js, css }],
-  // entry: { js: umd },
-  // output: { library: 'Ta', libraryTarget: 'umd' }, // {}
+  entry: { js: umd },
+  output: {
+    filename: 'build.[hash:8].js',
+    library: 'Ta',
+    libraryTarget: 'umd'
+  }, // {}
   registry: 'https://registry.npm.taobao.org',
   externals: [
     {
@@ -110,7 +114,7 @@ falco({
   cache: false, // true
   // port: 8000, // 2222
   template: join(__dirname, 'template.html'),
-  // mode: 'development', // 'production'
+  mode: 'development', // 'production'
   tmpDir: join(__dirname, 'temp'),
   // esModules: false, // true
   cssModule: false, // false

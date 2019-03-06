@@ -3,7 +3,7 @@
 ## 0.5.0
 
 - feat: output filename option
-- refactor: codes arguments
+- refactor: argument `codes`
 
 ## 0.4.8
 

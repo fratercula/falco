@@ -4,6 +4,7 @@
 
 - feat: output filename option
 - refactor: argument `codes`
+- fix: file dependencies analyzes
 
 ## 0.4.8
 

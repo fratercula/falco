@@ -2,6 +2,7 @@
 
 ## 0.5.0
 
+- feat: speeding up npm install
 - feat: output filename option
 - refactor: argument `codes`
 - fix: file dependencies analyzes

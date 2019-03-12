@@ -1,12 +1,14 @@
 # Changelog
 
-## 0.5.0
+## 1.0.0
 
 - feat: add svg loader
 - feat: speeding up npm install
 - feat: output filename option
 - refactor: argument `codes`
 - fix: file dependencies analyzes
+- fix: missing babel polyfill
+- fix: install missing modules name
 
 ## 0.4.8
 

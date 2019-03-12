@@ -2,6 +2,7 @@
 
 ## 0.5.0
 
+- feat: add svg loader
 - feat: speeding up npm install
 - feat: output filename option
 - refactor: argument `codes`

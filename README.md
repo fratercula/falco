@@ -165,7 +165,7 @@ set npm registry
 
 ```js
 {
-  esModules: true,
+  esModules: true, // always `true` when mode is `development`
 }
 ```
 
@@ -231,6 +231,26 @@ it will automatic detection of using `vue` normally, but cannot detect in `circu
 ```js
 {
   vue: false, // not used vue
+}
+```
+
+### debug
+
+show `bable-loader` debug infomation, default is `false`
+
+```js
+{
+  debug: true, // only for `production` mode
+}
+```
+
+### targets
+
+set browsers targets, default is `{}`
+
+```js
+{
+  targets: { ios: 10 }, // only for `production` mode
 }
 ```
 

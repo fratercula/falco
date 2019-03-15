@@ -2,6 +2,7 @@
 
 ## 1.0.0
 
+- feat: add debug, targets option
 - feat: add svg loader
 - feat: speeding up npm install
 - feat: output filename option

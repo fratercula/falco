@@ -2,10 +2,9 @@
 
 ## 1.0.0
 
-- feat: add debug, targets option
+- feat: add debug, targets, output filename, sourceMap option
 - feat: add svg loader
 - feat: speeding up npm install
-- feat: output filename option
 - refactor: argument `codes`
 - fix: file dependencies analyzes
 - fix: missing babel polyfill

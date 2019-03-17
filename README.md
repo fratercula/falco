@@ -254,6 +254,16 @@ set browsers targets, default is `{}`
 }
 ```
 
+### report
+
+use [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer), default `false`
+
+```js
+{
+  report: true, // only for `production` mode
+}
+```
+
 ## Other
 
 - support `ES6+/React/Vue/TypeScript/Less`

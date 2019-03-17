@@ -2,7 +2,7 @@
 
 ## 1.0.0
 
-- feat: add debug, targets, output filename, sourceMap option
+- feat: add debug, targets, output filename, sourceMap, report option
 - feat: add svg loader
 - feat: speeding up npm install
 - refactor: argument `codes`

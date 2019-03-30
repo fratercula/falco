@@ -3,6 +3,7 @@
 ## 1.0.1
 
 - docs: update docs
+- test: add test
 
 ## 1.0.0
 

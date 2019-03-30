@@ -12,7 +12,8 @@
     "falco": "./bin/falco.js"
   },
   "scripts": {
-    "test": "cd test && node index.js"
+    "lint": "eslint .",
+    "test": "mocha --reporter dot --require intelli-espower-loader ./test/index.js"
   },
   "repository": {
     "type": "git",
@@ -65,6 +66,9 @@
   "devDependencies": {
     "eslint": "^5.12.1",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.14.0"
+    "eslint-plugin-import": "^2.14.0",
+    "intelli-espower-loader": "^1.0.1",
+    "mocha": "^6.0.2",
+    "power-assert": "^1.6.1"
   }
 }

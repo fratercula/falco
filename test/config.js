@@ -6,6 +6,7 @@ const getConfig = require('./fixtures/config')
 const js = require('./fixtures/codes/js')
 const css = require('./fixtures/codes/css')
 const less = require('./fixtures/codes/less')
+const ts = require('./fixtures/codes/ts')
 
 describe('config', () => {
   it('template', async () => {
@@ -21,9 +22,9 @@ describe('config', () => {
     assert(template.includes('@Falco'))
   })
 
-  it('multiple entry', async () => {
+  it('multiple entry, ts', async () => {
     const config = getConfig({
-      entry: [{ js, css }, { css: less }],
+      entry: [{ js, css }, { css: less }, { js: ts, type: 'ts' }],
     })
 
     const { codes } = await falco(config)

@@ -39,11 +39,13 @@ const options = {
       dependencies,
       template,
       mode,
+      server,
     } = await falco(options)
     // mode: `development` or `production`
     // template: html template, for production mode
     // codes: converted code, and sourceMap
     // dependencies: package dependencies
+    // server: webpack dev server, `development` mode only
   } catch (e) {
     console.log(e)
   }

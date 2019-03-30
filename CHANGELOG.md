@@ -4,6 +4,7 @@
 
 - docs: update docs
 - test: add test
+- feat: close dev server method
 
 ## 1.0.0
 

@@ -17,8 +17,7 @@ describe('umd', () => {
     const { mode, codes, dependencies } = await falco(config)
 
     assert(mode === 'production')
-    assert(codes[0].name = 'index.js')
-    assert(codes[1].name = 'index.map.js')
+    assert(codes.map(s => s.name).join() === 'index.js,index.js.map')
     assert(dependencies.join() === 'react')
   })
 })

@@ -13,7 +13,7 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "test": "mocha --reporter dot --require intelli-espower-loader ./test/index.js"
+    "test": "mocha --timeout 10000 --reporter dot --require intelli-espower-loader ./test/index.js"
   },
   "repository": {
     "type": "git",

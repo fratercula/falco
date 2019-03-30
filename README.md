@@ -90,7 +90,7 @@ codes entry, `object` or `array`, required
 
 // multiple
 {
-  entry: [{ js, css }, { js1, css1 }],
+  entry: [{ js, css }, { js: js1, css: css1 }],
 }
 
 // directory

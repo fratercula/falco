@@ -1,6 +1,8 @@
 # Falco
 
-JavaScript Transcoder, build codes with `zero` configuration
+JavaScript Runner. run and build codes with `zero` configuration
+
+![falco](https://user-images.githubusercontent.com/2193211/55216793-afa54180-5238-11e9-9cda-f1c702dcd97b.gif)
 
 ## Install
 
@@ -74,15 +76,14 @@ $ falco -p 2222 -d -r https://registry.npm.taobao.org -c -m vue.js -t template.h
 
 ### entry
 
-codes to be converted, type is `object` or `array`, required.
-
-example:
+codes entry, `object` or `array`, required
 
 ```js
 // basic
 {
   entry: {
     js: 'console.log(1)',
+    type: 'ts', // `js/jsx` or `ts/tsx`
     css: 'body { color: red }',
   },
 }
@@ -139,7 +140,7 @@ modules external config, default `[]`. you can set external `umd` url
 
 ### packages
 
-set npm install packages version. All packages list here will be installed, and ignore externals
+set npm install packages version. packages list here will be installed, ignore `externals`
 
 ```js
 {
@@ -191,7 +192,7 @@ set output `index.html` template
 
 ### tmpDir
 
-set build temp directory, default is `os.tmpDir()`
+set temp files directory, default is `os.tmpDir()`
 
 ```js
 {
@@ -201,7 +202,7 @@ set build temp directory, default is `os.tmpDir()`
 
 ### cache
 
-set if remove `node_modules` before `npm install`, set `false` will remove. default is `true`
+set if empty `node_modules` before `npm install`, set `false` will remove. default is `true`
 
 ```js
 {
@@ -226,11 +227,11 @@ cannot set `path`
 
 ### vue
 
-it will automatic detection of using `vue` normally, but cannot detect in `circular dependency`
+`falco` will automatic detection of using `vue` normally, except code `circular dependency`
 
 ```js
 {
-  vue: false, // not used vue
+  vue: false, // not vue
 }
 ```
 
@@ -241,6 +242,16 @@ show `bable-loader` debug infomation, default is `false`
 ```js
 {
   debug: true, // only for `production` mode
+}
+```
+
+### sourceMap
+
+enable `sourceMap`, default is `true`
+
+```js
+{
+  sourceMap: false, // always `true` in `development` mode
 }
 ```
 
@@ -270,7 +281,8 @@ use [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-
 - template set default DOM `<div id="root"></div>`
 - css preprocessor only support `less`
 - file extension supports `js/jsx/ts/tsx/css/less/vue/json`
-- default output files name are `index.js`, `index.js.map` and `index.html`. output directory is `dist`
+- default output files name are `index.js`, `index.js.map` and `index.html`
+- default output directory is `dist`
 - default externals umd url is `https://unpkg.com/${packageName}`
 - not support webpack multiple entry
 

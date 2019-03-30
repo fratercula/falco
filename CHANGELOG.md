@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.1
+
+- docs: update docs
+
 ## 1.0.0
 
 - feat: add debug, targets, output filename, sourceMap, report option

@@ -1,7 +1,7 @@
 {
   "name": "@fratercula/falco",
-  "version": "1.0.0",
-  "description": "JavaScript Transcoder",
+  "version": "1.0.1",
+  "description": "JavaScript Runner",
   "main": "index.js",
   "files": [
     "bin",

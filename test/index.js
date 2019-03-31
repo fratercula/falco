@@ -3,5 +3,5 @@
 describe('Falco', () => {
   require('./umd')
   require('./config')
-  require('./dir')
+  require('./server')
 })

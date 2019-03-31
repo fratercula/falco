@@ -12,8 +12,11 @@
     "falco": "./bin/falco.js"
   },
   "scripts": {
-    "lint": "eslint .",
-    "test": "mocha --timeout 30000 --reporter dot --require intelli-espower-loader ./test/index.js"
+    "test:lint": "eslint .",
+    "test:unit": "mocha --timeout 30000 --reporter dot --require intelli-espower-loader ./test/index.js",
+    "test:cover": "nyc npm run test:unit",
+    "test": "npm run test:lint && npm run test:cover",
+    "coverage": "nyc report --reporter=lcov npm run test:unit"
   },
   "repository": {
     "type": "git",
@@ -69,6 +72,7 @@
     "eslint-plugin-import": "^2.14.0",
     "intelli-espower-loader": "^1.0.1",
     "mocha": "^6.0.2",
+    "nyc": "^13.3.0",
     "power-assert": "^1.6.1"
   }
 }

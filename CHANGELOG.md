@@ -3,7 +3,7 @@
 ## 1.0.1
 
 - docs: update docs
-- test: add test
+- test: unit test and coverage test
 - feat: close dev server method
 
 ## 1.0.0

@@ -1,5 +1,5 @@
 module.exports = config => ({
-  registry: 'https://registry.npm.taobao.org',
+  // registry: 'https://registry.npm.taobao.org',
   externals: [
     {
       name: 'react',

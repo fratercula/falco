@@ -45,6 +45,7 @@ describe('config', () => {
       packages: {
         five: '0.7.0',
       },
+      cache: false,
     })
 
     const { codes } = await falco(config)

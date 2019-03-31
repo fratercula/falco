@@ -1,7 +1,5 @@
 node_modules/
+coverage/
+.nyc_output/
 package-lock.json
 .DS_Store
-test/index.html
-test/temp/
-test/build.*.js
-test/build.*.js.map

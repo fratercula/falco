@@ -5,6 +5,7 @@
 - docs: update docs
 - test: unit test and coverage test
 - feat: close dev server method
+- chore: ci test
 
 ## 1.0.0
 

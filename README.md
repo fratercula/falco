@@ -1,5 +1,8 @@
 # Falco
 
+[![Build Status](https://travis-ci.org/fratercula/falco.svg?branch=master)](https://travis-ci.org/fratercula/falco)
+[![codecov](https://codecov.io/gh/fratercula/falco/branch/master/graph/badge.svg)](https://codecov.io/gh/fratercula/falco)
+
 JavaScript Runner. run and build codes with `zero` configuration
 
 ![falco](https://user-images.githubusercontent.com/2193211/55216793-afa54180-5238-11e9-9cda-f1c702dcd97b.gif)

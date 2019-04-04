@@ -12,6 +12,7 @@
     "falco": "./bin/falco.js"
   },
   "scripts": {
+    "start": "node test/start.js",
     "test:lint": "eslint .",
     "test:unit": "mocha --timeout 30000 --reporter dot --require intelli-espower-loader ./test/index.js",
     "test:cover": "nyc npm run test:unit",

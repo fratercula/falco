@@ -1,5 +1,7 @@
 const { join } = require('path')
 const http = require('http')
+const os = require('os')
+const { writeFileSync, removeSync } = require('fs-extra')
 const assert = require('power-assert')
 const falco = require('../')
 const getConfig = require('./fixtures/config')
@@ -67,6 +69,35 @@ describe('server', () => {
     await sleep()
     const code = await request('/', 8000)
     assert(code === 200)
+    server.close()
+  })
+
+  it('install', async () => {
+    const config = {
+      entry: {
+        main: 'install.js',
+        path: join(__dirname, 'fixtures'),
+      },
+      mode: 'development',
+      cache: false,
+    }
+    const pkg = join(os.tmpdir(), 'FALCO', 'package.json')
+
+    removeSync(pkg)
+
+    const { server } = await falco(config)
+    await sleep()
+
+    let code = 'import nycticorax from \'nycticorax\'\nconsole.log(five())'
+    writeFileSync(join(__dirname, 'fixtures', 'install.js'), code)
+    await sleep(5000)
+
+    const { dependencies } = require(pkg) // eslint-disable-line
+    assert(Object.keys(dependencies).includes('nycticorax') === true)
+
+    code = 'console.log(5)'
+    writeFileSync(join(__dirname, 'fixtures', 'install.js'), code)
+
     server.close()
   })
 })

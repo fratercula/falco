@@ -1,15 +1,16 @@
-const falco = require('../')
-
-const js = `
-import isarray from 'isarray'
-console.log(isarray([]))
-`;
+const { join } = require('path')
+const falco = require('../');
 
 (async () => {
   try {
     const { codes } = await falco({
       sourceMap: false,
-      entry: { js },
+      entry: {
+        path: join(__dirname, 'fixtures', 'react'),
+        main: 'index.js',
+      },
+      mode: 'development',
+      registry: 'https://registry.npm.taobao.org',
     })
 
     global.console.log(codes)

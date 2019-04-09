@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.0
+
+- fix: development mode assets error
+
 ## 1.0.1
 
 - docs: update docs

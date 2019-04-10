@@ -4,6 +4,7 @@
 
 - fix: development mode assets error
 - chore: update webpack-dev-server
+- fix: error module path on local install
 
 ## 1.0.1
 

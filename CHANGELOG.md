@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.1
+
+- fix: remove exec space and wrap
+
 ## 1.1.0
 
 - fix: development mode assets error

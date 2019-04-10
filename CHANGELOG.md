@@ -3,6 +3,7 @@
 ## 1.1.0
 
 - fix: development mode assets error
+- chore: update webpack-dev-server
 
 ## 1.0.1
 

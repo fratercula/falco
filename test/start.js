@@ -10,6 +10,7 @@ const falco = require('../');
         main: 'index.js',
       },
       mode: 'development',
+      // report: true,
       registry: 'https://registry.npm.taobao.org',
     })
 

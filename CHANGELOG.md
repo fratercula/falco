@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.2
+
+- fix: miss module name
+- fix: miss module install error
+
 ## 1.1.1
 
 - fix: remove exec space and wrap

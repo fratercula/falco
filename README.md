@@ -280,6 +280,16 @@ use [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-
 }
 ```
 
+### env
+
+set `NODE_ENV`
+
+```js
+{
+  env: 'development',
+}
+```
+
 ## Other
 
 - support `ES6+/React/Vue/TypeScript/Less`

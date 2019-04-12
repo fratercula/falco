@@ -9,10 +9,11 @@ const less = require('./fixtures/codes/less')
 const ts = require('./fixtures/codes/ts')
 
 describe('config', () => {
-  it('template', async () => {
+  it('template, env', async () => {
     const config = getConfig({
       entry: { js },
       mode: 'development',
+      env: 'development',
       template: join(__dirname, 'fixtures/template.html'),
     })
 

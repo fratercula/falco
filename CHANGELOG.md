@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.3
+
+- feat: env option
+
 ## 1.1.2
 
 - fix: miss module name

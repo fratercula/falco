@@ -207,7 +207,7 @@ set temp files directory, default is `os.tmpDir()`
 
 ### cache
 
-set if empty `node_modules` before `npm install`, set `false` will remove. default is `true`
+set if use `--prefer-offline` in `npm install`, set `false` to use. default is `true`
 
 ```js
 {

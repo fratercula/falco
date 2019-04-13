@@ -3,6 +3,7 @@
 ## 1.1.3
 
 - feat: env option
+- refactor: cache option
 
 ## 1.1.2
 

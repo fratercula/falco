@@ -12,7 +12,9 @@ const falco = require('../');
       mode: 'development',
       env: 'production',
       // report: true,
-      registry: 'https://registry.npm.taobao.org',
+      npm: {
+        registry: 'https://registry.npm.taobao.org',
+      },
     })
 
     global.console.log(codes)

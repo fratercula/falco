@@ -1,9 +1,10 @@
 # Changelog
 
-## 1.1.3
+## 1.2.0
 
 - feat: env option
-- refactor: cache option
+- refactor: remove cache, registry option
+- feat: npm option
 
 ## 1.1.2
 

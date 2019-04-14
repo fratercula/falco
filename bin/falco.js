@@ -9,7 +9,6 @@ const falco = require('../lib/compiler')
 const {
   p,
   d,
-  r,
   c,
   o = 'dist',
   m = 'index.js',
@@ -23,7 +22,6 @@ const config = {
     path: cwd,
   },
   template: join(cwd, t),
-  registry: r,
   port,
   mode: d ? 'development' : 'production',
 }

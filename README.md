@@ -24,7 +24,9 @@ const options = {
     main: 'index.js',
     path: 'path/to/build',
   },
-  registry: 'https://registry.npm.taobao.org',
+  npm: {
+    registry: 'https://registry.npm.taobao.org',
+  },
   externals: {
     // ...
   },
@@ -66,11 +68,10 @@ $ npm i @fratercula/falco -g
 use
 
 ```bash
-$ falco -p 2222 -d -r https://registry.npm.taobao.org -c -m vue.js -t template.html -o lib
+$ falco -p 2222 -d -c -m vue.js -t template.html -o lib
 
 # p: server port, for development mode. default 2222
 # d: set development mode
-# r: set npm registry
 # m: build entry. default `index.js`
 # c: use local config: `falco.config.js`
 # t: set html template. default is `index.html`
@@ -155,16 +156,6 @@ set npm install packages version. packages list here will be installed, ignore `
 }
 ```
 
-### registry
-
-set npm registry
-
-```js
-{
-  registry: 'https://registry.npm.taobao.org',
-}
-```
-
 ### esModules
 
 [@babel/preset-env](https://babeljs.io/docs/en/babel-preset-env#targetsesmodules) option, default is `true`
@@ -205,13 +196,33 @@ set temp files directory, default is `os.tmpDir()`
 }
 ```
 
-### cache
+### npm
 
-set if use `--prefer-offline` in `npm install`, set `false` to use. default is `true`
+set npm options, cannot set `no-package-lock` and `prefix`
+
+```js
+// default
+{
+  npm: {
+    'no-audit': true,
+    production: true,
+  },
+}
+
+// example
+{
+  npm: {
+    registry: 'https://registry.npm.taobao.org',
+    'prefer-offline': true,
+    disturl: 'https://npm.taobao.org/dist',
+    // ...
+  },
+}
+```
 
 ```js
 {
-  cache: false,
+  npm: 'cnpm'
 }
 ```
 

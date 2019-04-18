@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.3.0
+
+- docs: typo
+- fix: development mode externals urls
+- test: rewrite test
+
 ## 1.2.0
 
 - feat: env option

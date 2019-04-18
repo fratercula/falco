@@ -1,9 +1,11 @@
 const { join } = require('path')
+const getConfig = require('./fixtures/config')
 const falco = require('../');
 
 (async () => {
+  const { externals } = getConfig({})
   try {
-    const { codes } = await falco({
+    const { codes, template } = await falco({
       sourceMap: false,
       entry: {
         path: join(__dirname, 'fixtures', 'react'),
@@ -11,6 +13,7 @@ const falco = require('../');
       },
       mode: 'development',
       env: 'production',
+      externals,
       // report: true,
       npm: {
         registry: 'https://registry.npm.taobao.org',
@@ -18,6 +21,7 @@ const falco = require('../');
     })
 
     global.console.log(codes)
+    global.console.log(template)
   } catch (e) {
     global.console.error(e)
   }

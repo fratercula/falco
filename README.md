@@ -220,12 +220,6 @@ set npm options, cannot set `no-package-lock` and `prefix`
 }
 ```
 
-```js
-{
-  npm: 'cnpm'
-}
-```
-
 ### output
 
 webpack [output](https://webpack.js.org/configuration/output/) option

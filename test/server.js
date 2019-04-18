@@ -79,11 +79,11 @@ describe('server', () => {
         path: join(__dirname, 'fixtures'),
       },
       mode: 'development',
-      cache: false,
     }
     const pkg = join(os.tmpdir(), 'FALCO', 'package.json')
 
     removeSync(pkg)
+    removeSync(join(os.tmpdir(), 'FALCO', 'node_modules'))
 
     const { server } = await falco(config)
     await sleep()

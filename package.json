@@ -1,6 +1,6 @@
 {
   "name": "@fratercula/falco",
-  "version": "1.3.0",
+  "version": "1.2.1",
   "description": "JavaScript Runner",
   "main": "index.js",
   "files": [
@@ -14,7 +14,7 @@
   "scripts": {
     "start": "node test/start.js",
     "test:lint": "eslint .",
-    "test:unit": "mocha --timeout 30000 --reporter dot --require intelli-espower-loader ./test/index.js",
+    "test:unit": "mocha --timeout 50000 --reporter dot --require intelli-espower-loader ./test/index.js",
     "test:cover": "nyc npm run test:unit",
     "test": "npm run test:lint && npm run test:cover",
     "coverage": "nyc report --reporter=lcov npm run test:unit"

@@ -1,10 +1,9 @@
 # Changelog
 
-## 1.3.0
+## 1.2.1
 
 - docs: typo
 - fix: development mode externals urls
-- test: rewrite test
 
 ## 1.2.0
 

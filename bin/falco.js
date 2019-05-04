@@ -3,7 +3,6 @@
 const { join } = require('path')
 const { outputFileSync } = require('fs-extra')
 const minimist = require('minimist')
-const logger = require('@acyort/logger')('falco')
 const falco = require('../lib/compiler')
 
 const {
@@ -33,7 +32,7 @@ if (c) {
     // eslint-disable-next-line global-require, import/no-dynamic-require
     localConfig = require(join(cwd, 'falco.config.js'))
   } catch ({ message }) {
-    logger.error(message)
+    global.console.error(message)
   }
 }
 
@@ -55,6 +54,6 @@ if (c) {
       outputFileSync(join(dist, name), content)
     })
   } catch ({ message }) {
-    logger.error(message)
+    global.console.error(message)
   }
 })()

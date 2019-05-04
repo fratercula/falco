@@ -3,6 +3,7 @@
 ## 1.3.0
 
 - chore: update dependencies
+- chore: change module directories
 - refactor: remove logger
 
 ## 1.2.1

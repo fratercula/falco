@@ -306,6 +306,15 @@ set `NODE_ENV`
 - default externals umd url is `https://unpkg.com/${packageName}`
 - not support webpack multiple entry
 
+**loaders**
+
+- babel-loader
+- style-loader
+- css-loader
+- less-loader
+- vue-loader
+- svg-inline-loader
+
 ## License
 
 MIT

@@ -3,6 +3,7 @@ import { render } from 'react-dom'
 import Com from './components'
 import svg from './components/back.svg'
 import style from './index.css'
+import dir from './dir'
 
 console.log(process.env)
 

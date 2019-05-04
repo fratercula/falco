@@ -1,6 +1,6 @@
 /* eslint global-require: 0 */
 
-describe('Falco', () => {
+describe('helper', () => {
   require('./dependency')
   require('./name')
   require('./module')

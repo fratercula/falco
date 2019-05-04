@@ -29,5 +29,10 @@ describe('exec', () => {
     } catch (e) {
       assert(e === undefined)
     }
+    try {
+      await exec(command)
+    } catch (e) {
+      assert(e === undefined)
+    }
   })
 })

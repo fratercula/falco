@@ -57,6 +57,28 @@ const options = {
 })()
 ```
 
+get files trees
+
+```js
+const { trees } = require('@fratercula/falco')
+
+// entry, main
+trees('path/to/entry', 'index.js')
+/*
+[
+  {
+    path: 'index.js',
+    content: 'import React from \'react\'\nimport \'reset-css/less/reset.less\'\nimport \'./index.less\'\n\nexport default function () {\n  return (\n    <div>component</div>\n  )\n}\n',
+  },
+  {
+    path: 'components/index.js',
+    content: '...',
+  }
+  ...
+]
+*/
+```
+
 ## CLI
 
 install

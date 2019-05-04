@@ -7,6 +7,7 @@
 - refactor: remove logger
 - fix: files dependency analysis ignore `.json` and `.svg`
 - feat: `trees` API
+- test: more test cases
 
 ## 1.2.1
 

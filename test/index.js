@@ -2,5 +2,5 @@
 
 describe('Falco', () => {
   require('./helper')
-  require('./compiler')
+  // require('./compiler')
 })

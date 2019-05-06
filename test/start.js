@@ -42,7 +42,7 @@ const getConfig = config => ({
         path: join(__dirname, 'fixtures', 'react'),
         main: 'index.js',
       },
-      mode: 'development',
+      // mode: 'development',
       env: 'production',
       externals,
       // report: true,

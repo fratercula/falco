@@ -1,5 +1,5 @@
 const assert = require('power-assert')
-const external = require('../../lib/helper/external')
+const external = require('../../lib/compiler/externals')
 
 describe('external', () => {
   const config = {

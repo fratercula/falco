@@ -4,5 +4,6 @@ describe('compiler', () => {
   // require('./checker')
   // require('./entry')
   // require('./externals')
-  require('./config')
+  // require('./config')
+  require('./template')
 })

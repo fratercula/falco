@@ -36,7 +36,12 @@ const getConfig = config => ({
 (async () => {
   const { externals } = getConfig({})
   try {
-    const { codes, template } = await falco({
+    const {
+      codes,
+      template,
+      server,
+      ...rest
+    } = await falco({
       sourceMap: false,
       entry: {
         path: join(__dirname, 'fixtures', 'react'),
@@ -51,8 +56,7 @@ const getConfig = config => ({
       },
     })
 
-    global.console.log(codes)
-    global.console.log(template)
+    global.console.log(rest)
   } catch (e) {
     global.console.error(e)
   }

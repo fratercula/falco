@@ -5,5 +5,6 @@ describe('compiler', () => {
   // require('./entry')
   // require('./externals')
   // require('./config')
-  require('./template')
+  // require('./template')
+  require('./requires')
 })

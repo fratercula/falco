@@ -1,38 +1,29 @@
 const assert = require('power-assert')
-const { resolve, join } = require('path')
+const { resolve } = require('path')
 const { tmpdir } = require('os')
 const getEntry = require('../../lib/compiler/entry')
 
 describe('entry', () => {
   it('ts', () => {
-    const entry = {
-      path: resolve(__dirname, '../fixtures/ts'),
-      main: 'index.tsx',
-    }
+    const entry = resolve(__dirname, '../fixtures/ts/index.tsx')
     const config = getEntry(entry)
     assert(config.isVue === false)
-    assert(config.entry[0] === join(entry.path, entry.main))
+    assert(config.entry[0] === entry)
     assert(config.modules.join() === 'react,react,react-dom')
   })
 
   it('vue', () => {
-    const entry = {
-      path: resolve(__dirname, '../fixtures/vue'),
-      main: 'index.js',
-    }
+    const entry = resolve(__dirname, '../fixtures/vue/index.js')
     const config = getEntry(entry)
     assert(config.isVue === true)
     assert(config.modules.join() === 'vue')
   })
 
   it('error', () => {
-    const entry = {
-      path: resolve(__dirname, '../fixtures/ts'),
-      main: 'index.js',
-    }
+    const entry = resolve(__dirname, '../fixtures/ts/index.js')
     const config = getEntry(entry)
     assert(config.isVue === false)
-    assert(config.entry[0] === join(entry.path, entry.main))
+    assert(config.entry[0] === entry)
     assert(config.modules.length === 0)
   })
 

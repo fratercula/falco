@@ -13,10 +13,7 @@ const sleep = (t = 1000) => new Promise((r) => {
 describe('server', () => {
   it('run and reinstall', async () => {
     const config = {
-      entry: {
-        main: 'server.js',
-        path: resolve(__dirname, '../fixtures'),
-      },
+      entry: resolve(__dirname, '../fixtures/server.js'),
       mode: 'development',
     }
     const pkg = join(os.tmpdir(), 'FALCO', 'package.json')

@@ -34,10 +34,7 @@ describe('build', () => {
   it('react', async () => {
     const config = {
       externals,
-      entry: {
-        main: 'index.js',
-        path: resolve(__dirname, '../fixtures/react'),
-      },
+      entry: resolve(__dirname, '../fixtures/react/index.js'),
       env: 'production',
     }
 
@@ -47,10 +44,7 @@ describe('build', () => {
   it('vue', async () => {
     const config = {
       externals,
-      entry: {
-        main: 'index.js',
-        path: resolve(__dirname, '../fixtures/vue'),
-      },
+      entry: resolve(__dirname, '../fixtures/vue/index.js'),
     }
 
     const { dependencies } = await falco(config)
@@ -59,10 +53,7 @@ describe('build', () => {
   it('ts', async () => {
     const config = {
       externals,
-      entry: {
-        main: 'index.tsx',
-        path: resolve(__dirname, '../fixtures/ts'),
-      },
+      entry: resolve(__dirname, '../fixtures/ts/index.tsx'),
     }
 
     const { dependencies } = await falco(config)

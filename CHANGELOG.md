@@ -5,6 +5,7 @@
 - chore: update dependencies
 - chore: change module directories
 - refactor: remove logger
+- refactor: entry path
 - fix: files dependency analysis ignore `.json` and `.svg`
 - feat: `trees` API
 - test: test cases

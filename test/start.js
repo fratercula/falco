@@ -43,14 +43,11 @@ const getConfig = config => ({
       ...rest
     } = await falco({
       sourceMap: false,
-      entry: {
-        path: join(__dirname, 'fixtures', 'react'),
-        main: 'index.js',
-      },
-      mode: 'development',
+      entry: join(__dirname, 'fixtures', 'react', 'index.js'),
+      // mode: 'development',
       env: 'production',
       externals,
-      // report: true,
+      report: true,
       npm: {
         registry: 'https://registry.npm.taobao.org',
       },

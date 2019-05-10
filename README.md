@@ -20,10 +20,7 @@ const falco = require('@fratercula/falco')
 
 // see `options` below for more infomation
 const options = {
-  entry: {
-    main: 'index.js',
-    path: 'path/to/build',
-  },
+  entry: 'path/to/build/index.js',
   npm: {
     registry: 'https://registry.npm.taobao.org',
   },
@@ -62,8 +59,7 @@ get files trees
 ```js
 const { trees } = require('@fratercula/falco')
 
-// entry, main
-trees('path/to/entry', 'index.js')
+trees('path/to/entry/index.js')
 /*
 [
   {
@@ -123,10 +119,7 @@ codes entry, `object` or `array`, required
 
 // directory
 {
-  entry: {
-    main: 'index.js', // main entry
-    path: '/path/to/your/codes/directory',
-  },
+  entry: '/path/to/your/codes/directory/index.js',
 }
 ```
 

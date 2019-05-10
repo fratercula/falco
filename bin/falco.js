@@ -16,10 +16,7 @@ const {
 const cwd = process.cwd()
 const port = Number(p) || undefined
 const config = {
-  entry: {
-    main: m,
-    path: cwd,
-  },
+  entry: join(cwd, m),
   template: join(cwd, t),
   port,
   mode: d ? 'development' : 'production',

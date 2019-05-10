@@ -324,9 +324,8 @@ set `NODE_ENV`
 - css preprocessor only support `less`
 - file extension supports `js/jsx/ts/tsx/css/less/vue/json`
 - default output files name are `index.js`, `index.js.map` and `index.html`
-- default output directory is `dist`
+- CLI default output directory is `dist`
 - default externals umd url is `https://unpkg.com/${packageName}`
-- not support webpack multiple entry
 
 **loaders**
 

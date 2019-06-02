@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.2
+
+- feat: add @babel/plugin-proposal-export-default-from
+
 ## 1.3.1
 
 - fix: cli entry

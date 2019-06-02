@@ -15,6 +15,7 @@ describe('server', () => {
     const config = {
       entry: resolve(__dirname, '../fixtures/server.js'),
       mode: 'development',
+      port: 9527,
     }
     const pkg = join(os.tmpdir(), 'FALCO', 'package.json')
 

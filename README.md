@@ -302,7 +302,7 @@ set `NODE_ENV`
 
 ## Other
 
-- support `ES6+/React/Vue/TypeScript/Less`
+- support `ES6+/React/TypeScript/Less`
 - template set default DOM `<div id="root"></div>`
 - css preprocessor only support `less`
 - file extension supports `js/jsx/ts/tsx/css/less/json`

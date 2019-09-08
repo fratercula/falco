@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.4.0
+
+- feat: remove vue support
+
 ## 1.3.2
 
 - feat: add @babel/plugin-proposal-export-default-from

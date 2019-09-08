@@ -7,22 +7,13 @@ describe('entry', () => {
   it('ts', () => {
     const entry = resolve(__dirname, '../fixtures/ts/index.tsx')
     const config = getEntry(entry)
-    assert(config.isVue === false)
     assert(config.entry[0] === entry)
     assert(config.modules.join() === 'react,react,react-dom')
-  })
-
-  it('vue', () => {
-    const entry = resolve(__dirname, '../fixtures/vue/index.js')
-    const config = getEntry(entry)
-    assert(config.isVue === true)
-    assert(config.modules.join() === 'vue')
   })
 
   it('error', () => {
     const entry = resolve(__dirname, '../fixtures/ts/index.js')
     const config = getEntry(entry)
-    assert(config.isVue === false)
     assert(config.entry[0] === entry)
     assert(config.modules.length === 0)
   })
@@ -35,7 +26,6 @@ describe('entry', () => {
     let result = getEntry(entry, tmpdir())
 
     assert(result.mode === 'production')
-    assert(result.isVue === false)
     assert(result.modules[0] === 'five')
     assert(result.entry[0].includes('js0.js') === true)
     assert(result.entry[1].includes('css0.css') === true)

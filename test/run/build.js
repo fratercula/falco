@@ -20,8 +20,8 @@ const externals = [
     urls: 'https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js',
   },
   {
-    name: 'vue',
-    root: 'Vue',
+    name: 'axios',
+    root: 'axios',
   },
   {
     name: 'antd',
@@ -40,15 +40,6 @@ describe('build', () => {
 
     const { dependencies } = await falco(config)
     assert(dependencies.join() === 'react,react-dom')
-  })
-  it('vue', async () => {
-    const config = {
-      externals,
-      entry: resolve(__dirname, '../fixtures/vue/index.js'),
-    }
-
-    const { dependencies } = await falco(config)
-    assert(dependencies.join() === 'vue')
   })
   it('ts', async () => {
     const config = {

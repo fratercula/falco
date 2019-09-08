@@ -25,13 +25,6 @@ describe('dependency', () => {
     assert(dependency(entry).map(({ path }) => path).join() === trees.join())
   })
 
-  it('vue', () => {
-    const entry = resolve(__dirname, '../fixtures/vue/index.js')
-    const trees = ['index.js', 'main.vue']
-
-    assert(dependency(entry).map(({ path }) => path).join() === trees.join())
-  })
-
   it('ts', () => {
     const entry = resolve(__dirname, '../fixtures/ts/index.tsx')
     const trees = ['index.tsx', 'hello.tsx']

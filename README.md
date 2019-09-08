@@ -86,7 +86,7 @@ $ npm i @fratercula/falco -g
 use
 
 ```bash
-$ falco -p 2222 -d -c -m vue.js -t template.html -o lib
+$ falco -p 2222 -d -c -m main.js -t template.html -o lib
 
 # p: server port, for development mode. default 2222
 # d: set development mode
@@ -145,9 +145,9 @@ modules external config, default `[]`. you can set external `umd` url
       urls: 'https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js',
     },
     {
-      // use `https://unpkg.com/vue`
-      name: 'vue',
-      root: 'Vue',
+      // use `https://unpkg.com/axios`
+      name: 'axios',
+      root: 'axios',
     },
     {
       name: 'antd',
@@ -250,16 +250,6 @@ cannot set `path`
 }
 ```
 
-### vue
-
-`falco` will automatic detection of using `vue` normally, except code `circular dependency`
-
-```js
-{
-  vue: false, // not vue
-}
-```
-
 ### debug
 
 show `bable-loader` debug infomation, default is `false`
@@ -315,7 +305,7 @@ set `NODE_ENV`
 - support `ES6+/React/Vue/TypeScript/Less`
 - template set default DOM `<div id="root"></div>`
 - css preprocessor only support `less`
-- file extension supports `js/jsx/ts/tsx/css/less/vue/json`
+- file extension supports `js/jsx/ts/tsx/css/less/json`
 - default output files name are `index.js`, `index.js.map` and `index.html`
 - CLI default output directory is `dist`
 - default externals umd url is `https://unpkg.com/${packageName}`
@@ -326,7 +316,6 @@ set `NODE_ENV`
 - style-loader
 - css-loader
 - less-loader
-- vue-loader
 - svg-inline-loader
 
 ## License

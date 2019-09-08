@@ -12,13 +12,6 @@ describe('entry', () => {
     assert(config.modules.join() === 'react,react,react-dom')
   })
 
-  it('vue', () => {
-    const entry = resolve(__dirname, '../fixtures/vue/index.js')
-    const config = getEntry(entry)
-    assert(config.isVue === true)
-    assert(config.modules.join() === 'vue')
-  })
-
   it('error', () => {
     const entry = resolve(__dirname, '../fixtures/ts/index.js')
     const config = getEntry(entry)

@@ -20,8 +20,8 @@ const getConfig = config => ({
       urls: 'https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js',
     },
     {
-      name: 'vue',
-      root: 'Vue',
+      name: 'axios',
+      root: 'axios',
     },
     {
       name: 'antd',

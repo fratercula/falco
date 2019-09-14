@@ -300,6 +300,18 @@ set `NODE_ENV`
 }
 ```
 
+### vscodeEslint
+
+for `vscode` only, export vscode `eslint.nodePath` config, use eslint widthout local installing
+
+built in `eslint-config-airbnb`, `babel-eslint`
+
+```js
+{
+  vscodeEslint: true,
+}
+```
+
 ## Other
 
 - support `ES6+/React/TypeScript/Less`

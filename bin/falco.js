@@ -4,7 +4,7 @@ const { join } = require('path')
 const { outputFileSync } = require('fs-extra')
 const minimist = require('minimist')
 const falco = require('../lib/compiler')
-const nodeModulesPath = require('../lib/helper/module-path')
+const exportEslint = require('../lib/helper/eslint')
 
 const {
   p,
@@ -23,22 +23,7 @@ const config = {
   mode: d ? 'development' : 'production',
 }
 
-const eslintSettingsPath = join(cwd, '.vscode/settings.json')
-
 let localConfig = {}
-let eslintConfig = {}
-
-try {
-  // eslint-disable-next-line global-require, import/no-dynamic-require
-  eslintConfig = require(eslintSettingsPath)
-} catch (e) {
-  //
-}
-
-eslintConfig['eslint.nodePath'] = nodeModulesPath()
-
-// export vscode eslint config
-outputFileSync(eslintSettingsPath, JSON.stringify(eslintConfig, null, 2))
 
 if (c) {
   try {
@@ -52,6 +37,11 @@ if (c) {
 (async () => {
   try {
     const options = { output: {}, ...config, ...localConfig }
+
+    if (options.vscodeEslint === true) {
+      exportEslint()
+    }
+
     const { mode, codes, template } = await falco(options)
     const dist = join(cwd, o)
 

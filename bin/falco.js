@@ -4,6 +4,7 @@ const { join } = require('path')
 const { outputFileSync } = require('fs-extra')
 const minimist = require('minimist')
 const falco = require('../lib/compiler')
+const exportEslint = require('../lib/helper/eslint')
 
 const {
   p,
@@ -36,6 +37,11 @@ if (c) {
 (async () => {
   try {
     const options = { output: {}, ...config, ...localConfig }
+
+    if (options.vscodeEslint === true && options.mode === 'development') {
+      exportEslint()
+    }
+
     const { mode, codes, template } = await falco(options)
     const dist = join(cwd, o)
 

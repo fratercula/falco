@@ -14,10 +14,10 @@
   },
   "scripts": {
     "start": "node test/start.js",
-    "test:lint": "eslint .",
+    "lint": "eslint .",
     "test:unit": "mocha --timeout 30000 --reporter dot --require intelli-espower-loader ./test/index.js",
     "test:cover": "nyc npm run test:unit",
-    "test": "npm run test:lint && npm run test:cover",
+    "test": "npm run lint && npm run test:cover",
     "coverage": "nyc report --reporter=lcov"
   },
   "repository": {
@@ -51,8 +51,15 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.6.0",
     "@babel/runtime": "^7.6.0",
+    "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
     "css-loader": "^2.1.1",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^1.7.0",
     "fs-extra": "^7.0.1",
     "less": "^3.10.3",
     "less-loader": "^5.0.0",
@@ -65,9 +72,6 @@
     "webpack-dev-server": "^3.8.0"
   },
   "devDependencies": {
-    "eslint": "^5.16.0",
-    "eslint-config-airbnb-base": "^13.2.0",
-    "eslint-plugin-import": "^2.18.2",
     "expect": "^24.9.0",
     "intelli-espower-loader": "^1.0.1",
     "mocha": "^6.2.0",

@@ -3,6 +3,7 @@
 ## 1.4.0
 
 - feat: remove vue support
+- feat: vscodeEslint option
 
 ## 1.3.2
 

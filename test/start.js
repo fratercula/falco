@@ -1,7 +1,7 @@
 const { join } = require('path')
 const falco = require('../')
 
-const getConfig = config => ({
+const getConfig = (config) => ({
   externals: [
     {
       name: 'react',

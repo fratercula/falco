@@ -38,7 +38,7 @@ if (c) {
   try {
     const options = { output: {}, ...config, ...localConfig }
 
-    if (options.vscodeEslint === true) {
+    if (options.vscodeEslint === true && options.mode === 'development') {
       exportEslint()
     }
 

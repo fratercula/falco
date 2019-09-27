@@ -39,7 +39,7 @@ if (c) {
     const options = { output: {}, ...config, ...localConfig }
 
     if (options.vscodeEslint === true && options.mode === 'development') {
-      exportEslint()
+      await exportEslint()
     }
 
     const { mode, codes, template } = await falco(options)

@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.4.1
+
+- fix: vscode eslint initial
+
 ## 1.4.0
 
 - feat: remove vue support

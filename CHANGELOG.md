@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.5.0
+
+- feat: webpack loaders option
+
 ## 1.4.1
 
 - fix: vscode eslint initial

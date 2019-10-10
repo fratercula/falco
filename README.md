@@ -260,6 +260,28 @@ show `bable-loader` debug infomation, default is `false`
 }
 ```
 
+### loaders
+
+custom webpack loaders, you should install the `loader` plugin locally
+
+```js
+{
+  loaders: [
+    {
+      test: /\.(png|jpg|gif)$/i,
+      use: [
+        {
+          loader: 'url-loader',
+          options: {
+            limit: 8192,
+          },
+        },
+      ],
+    },
+  ],
+}
+```
+
 ### sourceMap
 
 enable `sourceMap`, default is `true`

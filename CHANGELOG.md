@@ -3,6 +3,7 @@
 ## 1.5.0
 
 - feat: webpack loaders option
+- feat: use corejs3
 
 ## 1.4.1
 

@@ -343,6 +343,7 @@ built in `eslint-config-airbnb`, `babel-eslint`
 - default output files name are `index.js`, `index.js.map` and `index.html`
 - CLI default output directory is `dist`
 - default externals umd url is `https://unpkg.com/${packageName}`
+- css modules: auto detect file name width `module.css`
 
 **loaders**
 

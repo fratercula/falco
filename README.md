@@ -171,26 +171,6 @@ set npm install packages version. packages list here will be installed, ignore `
 }
 ```
 
-### esModules
-
-[@babel/preset-env](https://babeljs.io/docs/en/babel-preset-env#targetsesmodules) option, default is `true`
-
-```js
-{
-  esModules: true, // always `true` when mode is `development`
-}
-```
-
-### cssModule
-
-[css module](https://github.com/css-modules/css-modules), default is `false`
-
-```js
-{
-  cssModule: false,
-}
-```
-
 ### template
 
 set output `index.html` template

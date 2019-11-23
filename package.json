@@ -15,7 +15,7 @@
   "scripts": {
     "start": "node test/start.js",
     "lint": "eslint .",
-    "test:unit": "mocha --timeout 30000 --reporter dot --require intelli-espower-loader ./test/index.js",
+    "test:unit": "mocha --timeout 60000 --reporter dot --require intelli-espower-loader ./test/index.js",
     "test:cover": "nyc npm run test:unit",
     "test": "npm run lint && npm run test:cover",
     "coverage": "nyc report --reporter=lcov"

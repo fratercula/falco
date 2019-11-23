@@ -4,6 +4,9 @@
 
 - feat: webpack loaders option
 - feat: use corejs3
+- feat: auto detect css module
+- feat: remove esModules option
+- feat: remove cssModule option
 
 ## 1.4.1
 

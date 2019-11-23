@@ -5,11 +5,11 @@ const getTemplate = require('../../lib/compiler/template')
 describe('get Template', () => {
   const config = {
     template: resolve(__dirname, '../fixtures/template.html'),
-    esModules: false,
     externals: [
       { name: 'react', urls: ['a', 'b'] },
       { name: 'react-dom', urls: 'c' },
     ],
+    targets: { esmodules: false },
   }
   const dependencies = ['react']
   const assets = [{ name: 'index.js' }]
@@ -26,7 +26,7 @@ describe('get Template', () => {
 
   it('widthout template', () => {
     config.template = undefined
-    config.esModules = true
+    config.targets = { esmodules: true }
     delete config.externals[0].urls
 
     const result = getTemplate(config, dependencies, assets)

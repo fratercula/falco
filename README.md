@@ -30,8 +30,6 @@ const options = {
   template: path.join(process.cwd(), 'index.html'),
   port: 8000,
   mode: 'development',
-  esModules: true,
-  cssModule: false,
 }
 
 ;(async () => {

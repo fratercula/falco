@@ -9,8 +9,11 @@ JavaScript Runner. run and build codes with `zero` configuration
 
 ## Install
 
-```js
+```bash
 $ npm i @fratercula/falco
+
+# CLI
+$ npm i @fratercula/falco -g
 ```
 
 ## Usage
@@ -18,7 +21,6 @@ $ npm i @fratercula/falco
 ```js
 const falco = require('@fratercula/falco')
 
-// see `options` below for more infomation
 const options = {
   entry: 'path/to/build/index.js',
   npm: {
@@ -41,18 +43,21 @@ const options = {
       mode,
       server,
     } = await falco(options)
-    // mode: `development` or `production`
-    // template: html template, for production mode
-    // codes: converted code, and sourceMap
-    // dependencies: package dependencies
-    // server: webpack dev server, `development` mode only
   } catch (e) {
     console.log(e)
   }
 })()
 ```
 
-get files trees
+**Callback Parameters**
+
+- codes: webpack build codes, sourceMaps
+- dependencies: build codes dependencies modules
+- template: output html
+- mode: `development` or `production`
+- server: webpack dev server, only in `development` mode
+
+**Files Trees**
 
 ```js
 const { trees } = require('@fratercula/falco')
@@ -75,30 +80,61 @@ trees('path/to/entry/index.js')
 
 ## CLI
 
-install
-
-```js
-$ npm i @fratercula/falco -g
-```
-
-use
-
 ```bash
 $ falco -p 2222 -d -c -m main.js -t template.html -o lib
+```
 
-# p: server port, for development mode. default 2222
-# d: set development mode
-# m: build entry. default `index.js`
-# c: use local config: `falco.config.js`
-# t: set html template. default is `index.html`
-# o: set output path, default is `dist`
+Arguments
+
+- `v`: show version
+- `d`: set `development` mode
+- `p`: webpack dev server port, for `development` only, default is `2222`
+- `m`: webpack entry path, default is `index.js`
+- `c`: use config `falco.config.js`
+- `t`: use template, default is `index.html`
+- `o`: set output path, default is `dist`
+
+`falco.config.js` example:
+
+```js
+module.exports = {
+  mode: 'development',
+  output: {
+    filename: 'index.[hash:8].js',
+    library: 'Yy',
+    libraryTarget: 'umd',
+    libraryExport: 'default',
+  },
+  report: true,
+  debug: true,
+  targets: {
+    ie: '8',
+  },
+}
 ```
 
 ## Options
 
-### entry
+| Property | description | Type | Default |
+| ---- | ---- | --- | --- |
+| entry | webpack entry, required  | `object` \| `array` | - |
+| externals | webpack externals | `array` | `[]` |
+| packages | set packages version | `object` | `{}` |
+| template | html template | `string` | - |
+| tmpDir | temp files directory | `string` | `os.tmpDir()` |
+| npm | npm options | `object` | `{}` |
+| output | webpack output option | `object` | `{}` |
+| debug | `babel loader` debug option | `boolean` | `false` |
+| loaders | add webpack loaders, you should install the `loader` plugin locally | `array` | `[]` |
+| sourceMap | enable `sourceMap` | `boolean` | `true` |
+| targets | `browserlist` targets | `object` \| `array` \| `string`  | `{}` |
+| report | enable `webpack-bundle-analyzer` | `boolean` | `false` |
+| env | set `NODE_ENV` | `string` | - |
+| vscodeEslint | for `vscode` only, export vscode `eslint.nodePath` config, use eslint widthout local installing | `boolean` | `false` |
 
-codes entry, `object` or `array`, required
+## Options Example
+
+**entry**
 
 ```js
 // basic
@@ -121,9 +157,7 @@ codes entry, `object` or `array`, required
 }
 ```
 
-### externals
-
-modules external config, default `[]`. you can set external `umd` url
+**externals**
 
 ```js
 {
@@ -157,9 +191,9 @@ modules external config, default `[]`. you can set external `umd` url
 }
 ```
 
-### packages
+**packages**
 
-set npm install packages version. packages list here will be installed, ignore `externals`
+packages list here will be installed, ignore `externals`
 
 ```js
 {
@@ -169,9 +203,7 @@ set npm install packages version. packages list here will be installed, ignore `
 }
 ```
 
-### template
-
-set output `index.html` template
+**template**
 
 ```js
 {
@@ -179,9 +211,7 @@ set output `index.html` template
 }
 ```
 
-### tmpDir
-
-set temp files directory, default is `os.tmpDir()`
+**tmpDir**
 
 ```js
 {
@@ -189,9 +219,9 @@ set temp files directory, default is `os.tmpDir()`
 }
 ```
 
-### npm
+**npm**
 
-set npm options, cannot set `no-package-lock` and `prefix`
+cannot set `no-package-lock` and `prefix`
 
 ```js
 // default
@@ -213,9 +243,8 @@ set npm options, cannot set `no-package-lock` and `prefix`
 }
 ```
 
-### output
+**output**
 
-webpack [output](https://webpack.js.org/configuration/output/) option
 cannot set `path`
 
 ```js
@@ -228,19 +257,17 @@ cannot set `path`
 }
 ```
 
-### debug
+**debug**
 
-show `bable-loader` debug infomation, default is `false`
+only for `production` mode
 
 ```js
 {
-  debug: true, // only for `production` mode
+  debug: true,
 }
 ```
 
-### loaders
-
-custom webpack loaders, you should install the `loader` plugin locally
+**loaders**
 
 ```js
 {
@@ -260,9 +287,7 @@ custom webpack loaders, you should install the `loader` plugin locally
 }
 ```
 
-### sourceMap
-
-enable `sourceMap`, default is `true`
+**sourceMap**
 
 ```js
 {
@@ -270,29 +295,27 @@ enable `sourceMap`, default is `true`
 }
 ```
 
-### targets
+**targets**
 
-set browsers targets, default is `{}`
-
-```js
-{
-  targets: { ios: 10 }, // only for `production` mode
-}
-```
-
-### report
-
-use [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer), default `false`
+only for `production` mode
 
 ```js
 {
-  report: true, // only for `production` mode
+  targets: { ios: 10 },
 }
 ```
 
-### env
+**report**
 
-set `NODE_ENV`
+only for `production` mode
+
+```js
+{
+  report: true,
+}
+```
+
+**env**
 
 ```js
 {
@@ -300,9 +323,7 @@ set `NODE_ENV`
 }
 ```
 
-### vscodeEslint
-
-for `vscode` only, export vscode `eslint.nodePath` config, use eslint widthout local installing
+**vscodeEslint**
 
 built in `eslint-config-airbnb`, `babel-eslint`
 
@@ -312,24 +333,22 @@ built in `eslint-config-airbnb`, `babel-eslint`
 }
 ```
 
-## Other
+## Default Config
 
-- support `ES6+/React/TypeScript/Less`
-- template set default DOM `<div id="root"></div>`
-- css preprocessor only support `less`
-- file extension supports `js/jsx/ts/tsx/css/less/json`
-- default output files name are `index.js`, `index.js.map` and `index.html`
-- CLI default output directory is `dist`
-- default externals umd url is `https://unpkg.com/${packageName}`
-- css modules: auto detect file name width `module.css`
-
-**loaders**
-
-- babel-loader
-- style-loader
-- css-loader
-- less-loader
-- svg-inline-loader
+- Loaders
+  - babel-loader
+  - style-loader
+  - css-loader
+  - less-loader
+  - svg-inline-loader
+- Template DOM: `<div id="root"></div>`
+- Output directory: `dist`
+- Output files
+  - index.js
+  - index.js.map
+  - index.html
+- Externals umd url: `https://unpkg.com/${packageName}`
+- CSS modules: `[name].module.css`
 
 ## License
 

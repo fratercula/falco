@@ -5,8 +5,10 @@ const { outputFileSync } = require('fs-extra')
 const minimist = require('minimist')
 const falco = require('../lib/compiler')
 const exportEslint = require('../lib/helper/eslint')
+const { version } = require('../package.json')
 
 const {
+  v,
   p,
   d,
   c,
@@ -14,6 +16,12 @@ const {
   m = 'index.js',
   t = 'index.html',
 } = minimist(process.argv.slice(2))
+
+if (v) {
+  global.console.log(version)
+  process.exit(0)
+}
+
 const cwd = process.cwd()
 const port = Number(p) || undefined
 const config = {

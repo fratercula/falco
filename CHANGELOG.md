@@ -7,6 +7,7 @@
 - feat: auto detect css module
 - feat: remove esModules option
 - feat: remove cssModule option
+- feat: cli add version option
 
 ## 1.4.1
 

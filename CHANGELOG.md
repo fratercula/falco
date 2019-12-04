@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.5.1
+
+- fix: ignore babel loader config file
+- feat: development mode use targets: `last 1 chrome version`
+
 ## 1.5.0
 
 - feat: webpack loaders option

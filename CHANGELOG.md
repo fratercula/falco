@@ -3,7 +3,7 @@
 ## 1.5.1
 
 - fix: ignore babel loader config file
-- feat: development mode use targets: `last 1 chrome version`
+- feat: skip install prop-types
 
 ## 1.5.0
 

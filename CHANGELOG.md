@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.5.1
+## 1.5.1 - 1.5.3
 
 - fix: ignore babel loader config file
 - feat: skip install prop-types

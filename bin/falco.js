@@ -8,6 +8,7 @@ const exportEslint = require('../lib/helper/eslint')
 const { version } = require('../package.json')
 
 const {
+  eslint,
   v,
   p,
   d,
@@ -44,12 +45,12 @@ if (c) {
 
 (async () => {
   try {
-    const options = { output: {}, ...config, ...localConfig }
-
-    if (options.vscodeEslint === true && options.mode === 'development') {
+    if (eslint) {
       await exportEslint()
+      process.exit(0)
     }
 
+    const options = { output: {}, ...config, ...localConfig }
     const { mode, codes, template } = await falco(options)
     const dist = join(cwd, o)
 

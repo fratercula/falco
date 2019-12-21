@@ -86,13 +86,14 @@ $ falco -p 2222 -d -c -m main.js -t template.html -o lib
 
 Arguments
 
-- `v`: show version
-- `d`: set `development` mode
-- `p`: webpack dev server port, for `development` only, default is `2222`
-- `m`: webpack entry path, default is `index.js`
-- `c`: use config `falco.config.js`
-- `t`: use template, default is `index.html`
-- `o`: set output path, default is `dist`
+- `-v`: show version
+- `-d`: set `development` mode
+- `-p`: webpack dev server port, for `development` only, default is `2222`
+- `-m`: webpack entry path, default is `index.js`
+- `-c`: use config `falco.config.js`
+- `-t`: use template, default is `index.html`
+- `-o`: set output path, default is `dist`
+- `--eslint`: for `vscode` only, export vscode `eslint.nodePath` config. built in `eslint-config-airbnb`, `babel-eslint`
 
 `falco.config.js` example:
 
@@ -130,7 +131,6 @@ module.exports = {
 | targets | `browserlist` targets | `object` \| `array` \| `string`  | `{}` |
 | report | enable `webpack-bundle-analyzer` | `boolean` | `false` |
 | env | set `NODE_ENV` | `string` | - |
-| vscodeEslint | for `vscode` only, export vscode `eslint.nodePath` config, use eslint widthout local installing | `boolean` | `false` |
 
 ## Options Example
 
@@ -320,16 +320,6 @@ only for `production` mode
 ```js
 {
   env: 'development',
-}
-```
-
-**vscodeEslint**
-
-built in `eslint-config-airbnb`, `babel-eslint`
-
-```js
-{
-  vscodeEslint: true,
 }
 ```
 

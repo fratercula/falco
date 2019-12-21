@@ -1,6 +1,6 @@
 {
   "name": "@fratercula/falco",
-  "version": "1.5.4",
+  "version": "1.5.5",
   "description": "JavaScript Runner",
   "preferGlobal": true,
   "main": "index.js",
@@ -27,8 +27,7 @@
   "keywords": [
     "webpack",
     "babel",
-    "transcoder",
-    "code-switching"
+    "transcoder"
   ],
   "author": "LoeiFy <LoeiFy@gmail.com>",
   "license": "MIT",
@@ -40,19 +39,19 @@
   },
   "homepage": "https://github.com/fratercula/falco#readme",
   "dependencies": {
-    "@babel/core": "^7.7.5",
+    "@babel/core": "^7.7.7",
     "@babel/plugin-proposal-class-properties": "^7.7.4",
     "@babel/plugin-proposal-decorators": "^7.7.4",
     "@babel/plugin-proposal-export-default-from": "^7.7.4",
     "@babel/plugin-transform-modules-commonjs": "^7.7.5",
     "@babel/plugin-transform-runtime": "^7.7.6",
-    "@babel/preset-env": "^7.7.6",
+    "@babel/preset-env": "^7.7.7",
     "@babel/preset-react": "^7.7.4",
-    "@babel/preset-typescript": "^7.7.4",
-    "@babel/runtime-corejs3": "^7.7.6",
+    "@babel/preset-typescript": "^7.7.7",
+    "@babel/runtime-corejs3": "^7.7.7",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
-    "core-js": "^3.5.0",
+    "core-js": "^3.6.0",
     "css-loader": "^2.1.1",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^18.0.1",
@@ -67,9 +66,9 @@
     "style-loader": "^0.23.1",
     "svg-inline-loader": "^0.8.0",
     "terser-webpack-plugin": "^1.4.3",
-    "webpack": "^4.41.2",
+    "webpack": "^4.41.4",
     "webpack-bundle-analyzer": "^3.6.0",
-    "webpack-dev-server": "^3.9.0"
+    "webpack-dev-server": "^3.10.1"
   },
   "devDependencies": {
     "expect": "^24.9.0",

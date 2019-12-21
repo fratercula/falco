@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.5.5
+
+- feat: eslint option
+
 ## 1.5.1 - 1.5.3
 
 - fix: ignore babel loader config file

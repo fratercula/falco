@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.5.6
+
+- fix: CSS Modules error
+- chore: update dependencies
+
 ## 1.5.5
 
 - feat: eslint option

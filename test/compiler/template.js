@@ -9,6 +9,7 @@ describe('get Template', () => {
       { name: 'react', urls: ['a', 'b'] },
       { name: 'react-dom', urls: 'c' },
     ],
+    injectScript: true,
     targets: { esmodules: false },
   }
   const dependencies = ['react']
@@ -42,5 +43,11 @@ describe('get Template', () => {
     const result = getTemplate(config, dependencies, assets)
     assert(result.includes('src="react"') === true)
     assert(result.includes('type="module" src="./index.js"') === true)
+  })
+
+  it('no inject script', () => {
+    config.injectScript = false
+    const result = getTemplate(config, dependencies, assets)
+    assert(result.includes('script') === false)
   })
 })

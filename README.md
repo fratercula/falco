@@ -130,6 +130,7 @@ module.exports = {
 | sourceMap | enable `sourceMap` | `boolean` | `true` |
 | targets | `browserlist` targets | `object` \| `array` \| `string`  | `{}` |
 | report | enable `webpack-bundle-analyzer` | `boolean` | `false` |
+| injectScript | inject scripts into template | `boolean` | `true` |
 | env | set `NODE_ENV` | `string` | - |
 
 ## Options Example
@@ -312,6 +313,14 @@ only for `production` mode
 ```js
 {
   report: true,
+}
+```
+
+**injectScript**
+
+```js
+{
+  injectScript: false,
 }
 ```
 

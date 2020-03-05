@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.5.7
+
+- feat: injectScript option
+
 ## 1.5.6
 
 - fix: CSS Modules error

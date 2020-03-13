@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.5.8
+
+- feat: multiple entry
+
 ## 1.5.7
 
 - feat: injectScript option

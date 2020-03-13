@@ -118,7 +118,7 @@ module.exports = {
 
 | Property | description | Type | Default |
 | ---- | ---- | --- | --- |
-| entry | webpack entry, required  | `object` \| `array` | - |
+| entry | webpack entry, required  | `string` \| `array` | - |
 | externals | webpack externals | `array` | `[]` |
 | packages | set packages version | `object` | `{}` |
 | template | html template | `string` | - |
@@ -138,23 +138,14 @@ module.exports = {
 **entry**
 
 ```js
-// basic
-{
-  entry: {
-    js: 'console.log(1)',
-    type: 'ts', // `js/jsx` or `ts/tsx`
-    css: 'body { color: red }',
-  },
-}
-
-// multiple
-{
-  entry: [{ js, css }, { js: js1, css: css1 }],
-}
-
-// directory
+// path
 {
   entry: '/path/to/your/codes/directory/index.js',
+}
+
+// array
+{
+  entry: ['path/to/js0', 'path/to/js1'],
 }
 ```
 

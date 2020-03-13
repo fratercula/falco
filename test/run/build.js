@@ -1,6 +1,6 @@
 const { resolve } = require('path')
 const assert = require('power-assert')
-const falco = require('../../')
+const falco = require('../..')
 
 const externals = [
   {

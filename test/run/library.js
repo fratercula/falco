@@ -1,5 +1,5 @@
 const assert = require('power-assert')
-const falco = require('../../')
+const falco = require('../..')
 
 describe('umd', () => {
   it('mode', async () => {

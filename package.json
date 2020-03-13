@@ -1,6 +1,6 @@
 {
   "name": "@fratercula/falco",
-  "version": "1.5.7",
+  "version": "1.5.8",
   "description": "JavaScript Runner",
   "preferGlobal": true,
   "main": "index.js",

@@ -2,7 +2,7 @@ const { resolve, join } = require('path')
 const os = require('os')
 const { writeFileSync, removeSync } = require('fs-extra')
 const assert = require('power-assert')
-const falco = require('../../')
+const falco = require('../..')
 
 const sleep = (t = 1000) => new Promise((r) => {
   setTimeout(() => {

@@ -13,7 +13,6 @@ describe('entry', () => {
   it('error', () => {
     const entry = resolve(__dirname, '../fixtures/ts/index.js')
     const config = getEntry(entry)
-    assert(config.entry[0] === entry)
     assert(config.modules.length === 0)
   })
 })

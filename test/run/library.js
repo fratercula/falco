@@ -1,4 +1,5 @@
 const assert = require('power-assert')
+const { resolve } = require('path')
 const falco = require('../..')
 
 describe('umd', () => {
@@ -13,17 +14,12 @@ describe('umd', () => {
           amd: 'react',
         },
       ],
-      entry: {
-        js: `import React from 'react'
-export default function () {
-  return (<div></div>)
-}`,
-      },
+      entry: resolve(__dirname, '../fixtures/library.js'),
       output: {
         library: 'T',
         libraryTarget: 'umd',
       },
-      mode: 'development',
+      mode: 'production',
     }
 
     const { mode, codes, dependencies } = await falco(config)

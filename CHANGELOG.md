@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.5.9
+
+- fix: multiple entry
+
 ## 1.5.8
 
 - feat: multiple entry

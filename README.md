@@ -118,7 +118,7 @@ module.exports = {
 
 | Property | description | Type | Default |
 | ---- | ---- | --- | --- |
-| entry | webpack entry, required  | `string` \| `array` | - |
+| entry | webpack entry, required  | `string` \| `array` \| `object` | - |
 | externals | webpack externals | `array` | `[]` |
 | packages | set packages version | `object` | `{}` |
 | template | html template | `string` | - |
@@ -146,6 +146,14 @@ module.exports = {
 // array
 {
   entry: ['path/to/js0', 'path/to/js1'],
+}
+
+// object
+{
+  entry: {
+    index: 'path/to/index',
+    home: ['path/to/home'],
+  }
 }
 ```
 

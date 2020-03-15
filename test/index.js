@@ -1,7 +1,7 @@
 /* eslint global-require: 0 */
 
 describe('Falco', () => {
-  // require('./helper')
-  // require('./compiler')
+  require('./helper')
+  require('./compiler')
   require('./run')
 })

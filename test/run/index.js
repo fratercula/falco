@@ -2,7 +2,7 @@
 
 describe('run', () => {
   require('./library')
-  // require('./server')
-  // require('./build')
-  // require('./error')
+  require('./server')
+  require('./build')
+  require('./error')
 })

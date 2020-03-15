@@ -11,7 +11,7 @@ describe('entry', () => {
   })
 
   it('array', () => {
-    const entry = [resolve(__dirname, '../fixtures/ts/index.tsx')]
+    const entry = [resolve(__dirname, '../fixtures/ts/index.tsx'), resolve(__dirname, '../fixtures/react/index.css')]
     const config = getEntry(entry)
     assert(config.modules.includes('react-dom'))
     assert(config.widthPolyfillEntrys[0].includes('__falco__index.tsx'))
@@ -20,7 +20,7 @@ describe('entry', () => {
   it('object', () => {
     const entry = {
       index: resolve(__dirname, '../fixtures/ts/index.tsx'),
-      home: [resolve(__dirname, '../fixtures/ts/index.tsx')],
+      home: [resolve(__dirname, '../fixtures/ts/index.tsx'), resolve(__dirname, '../fixtures/react/index.css')],
     }
     const config = getEntry(entry)
     assert(config.modules.includes('react-dom'))

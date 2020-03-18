@@ -48,6 +48,7 @@ const getConfig = (config) => ({
       env: 'production',
       externals,
       report: true,
+      // contentBase: join(__dirname, 'fixtures'),
       npm: {
         registry: 'https://registry.npm.taobao.org',
       },

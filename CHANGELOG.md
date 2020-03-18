@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.5.10
+
+- feat: contentBase option
+
 ## 1.5.9
 
 - fix: multiple entry

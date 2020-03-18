@@ -132,6 +132,7 @@ module.exports = {
 | report | enable `webpack-bundle-analyzer` | `boolean` | `false` |
 | injectScript | inject scripts into template | `boolean` | `true` |
 | env | set `NODE_ENV` | `string` | - |
+| contentBase | webpack `contentBase` option | `string` | `os.tmpDir()` |
 
 ## Options Example
 

@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.5.11
+
+- fix: require path
+
 ## 1.5.10
 
 - feat: contentBase option

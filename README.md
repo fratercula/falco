@@ -133,6 +133,7 @@ module.exports = {
 | injectScript | inject scripts into template | `boolean` | `true` |
 | env | set `NODE_ENV` | `string` | - |
 | contentBase | webpack `contentBase` option | `string` | `os.tmpDir()` |
+| context | webpack `context` option | `string` | - |
 
 ## Options Example
 

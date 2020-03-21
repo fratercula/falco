@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.5.12
+
+- feat: context option
+
 ## 1.5.11
 
 - fix: require path

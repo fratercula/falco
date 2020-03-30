@@ -1,14 +1,16 @@
 #!/usr/bin/env node
 
 const { join } = require('path')
-const { outputFileSync } = require('fs-extra')
+const { outputFileSync, removeSync } = require('fs-extra')
 const minimist = require('minimist')
+const { TMP_DIR } = require('../lib/config')
 const falco = require('../lib/compiler')
 const exportEslint = require('../lib/helper/eslint')
 const { version } = require('../package.json')
 
 const {
   eslint,
+  clean,
   v,
   p,
   d,
@@ -20,6 +22,11 @@ const {
 
 if (v) {
   global.console.log(version)
+  process.exit(0)
+}
+
+if (clean) {
+  removeSync(TMP_DIR)
   process.exit(0)
 }
 

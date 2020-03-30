@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.6.0
+
+- feat: add clean option
+- chore: npm install log
+
 ## 1.5.12
 
 - feat: context option

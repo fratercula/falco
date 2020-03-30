@@ -94,6 +94,7 @@ Arguments
 - `-t`: use template, default is `index.html`
 - `-o`: set output path, default is `dist`
 - `--eslint`: for `vscode` only, export vscode `eslint.nodePath` config. built in `eslint-config-airbnb`, `babel-eslint`
+- `--clean`: clean temp files and node mudules
 
 `falco.config.js` example:
 

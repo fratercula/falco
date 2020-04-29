@@ -4,6 +4,7 @@
 
 - feat: add clean option
 - chore: npm install log
+- fix: npm install
 
 ## 1.5.12
 

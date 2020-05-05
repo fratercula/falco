@@ -1,14 +1,16 @@
 #!/usr/bin/env node
 
 const { join } = require('path')
-const { outputFileSync } = require('fs-extra')
+const { outputFileSync, removeSync } = require('fs-extra')
 const minimist = require('minimist')
+const { TMP_DIR, CWD } = require('../lib/config')
 const falco = require('../lib/compiler')
 const exportEslint = require('../lib/helper/eslint')
 const { version } = require('../package.json')
 
 const {
   eslint,
+  clean,
   v,
   p,
   d,
@@ -23,11 +25,15 @@ if (v) {
   process.exit(0)
 }
 
-const cwd = process.cwd()
+if (clean) {
+  removeSync(TMP_DIR)
+  process.exit(0)
+}
+
 const port = Number(p) || undefined
 const config = {
-  entry: join(cwd, m),
-  template: join(cwd, t),
+  entry: join(CWD, m),
+  template: join(CWD, t),
   port,
   mode: d ? 'development' : 'production',
 }
@@ -37,7 +43,7 @@ let localConfig = {}
 if (c) {
   try {
     // eslint-disable-next-line global-require, import/no-dynamic-require
-    localConfig = require(join(cwd, 'falco.config.js'))
+    localConfig = require(join(CWD, 'falco.config.js'))
   } catch ({ message }) {
     global.console.error(message)
   }
@@ -52,7 +58,7 @@ if (c) {
 
     const options = { output: {}, ...config, ...localConfig }
     const { mode, codes, template } = await falco(options)
-    const dist = join(cwd, o)
+    const dist = join(CWD, o)
 
     if (mode === 'development') {
       return

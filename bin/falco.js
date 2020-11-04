@@ -5,11 +5,9 @@ const { outputFileSync, removeSync } = require('fs-extra')
 const minimist = require('minimist')
 const { TMP_DIR, CWD } = require('../lib/config')
 const falco = require('../lib/compiler')
-const exportEslint = require('../lib/helper/eslint')
 const { version } = require('../package.json')
 
 const {
-  eslint,
   clean,
   v,
   p,
@@ -51,11 +49,6 @@ if (c) {
 
 (async () => {
   try {
-    if (eslint) {
-      await exportEslint()
-      process.exit(0)
-    }
-
     const options = { output: {}, ...config, ...localConfig }
     const { mode, codes, template } = await falco(options)
     const dist = join(CWD, o)

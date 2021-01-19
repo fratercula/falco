@@ -1,5 +1,5 @@
 {
-  "name": "@fratercula/falco",
+  "name": "@fratercula/falco2",
   "version": "2.0.0",
   "description": "JavaScript Runner",
   "preferGlobal": true,
@@ -10,13 +10,14 @@
     "index.js"
   ],
   "bin": {
-    "falco": "./bin/falco.js"
+    "falco2": "./bin/falco.js"
   },
   "scripts": {
     "start": "node test/start.js",
     "lint": "eslint .",
     "test:unit": "mocha --timeout 60000 --reporter dot --require intelli-espower-loader ./test/index.js",
     "test:cover": "nyc npm run test:unit",
+    "build": "tsc",
     "test": "npm run lint && npm run test:cover",
     "coverage": "nyc report --reporter=lcov"
   },
@@ -49,16 +50,9 @@
     "@babel/preset-react": "^7.9.4",
     "@babel/preset-typescript": "^7.9.0",
     "@babel/runtime-corejs3": "^7.9.6",
-    "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
     "core-js": "^3.6.5",
     "css-loader": "^2.1.1",
-    "eslint": "^5.16.0",
-    "eslint-config-airbnb": "^18.1.0",
-    "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.18.3",
-    "eslint-plugin-react-hooks": "^1.7.0",
     "fs-extra": "^7.0.1",
     "less": "^3.11.1",
     "less-loader": "^5.0.0",
@@ -71,10 +65,13 @@
     "webpack-dev-server": "^3.10.3"
   },
   "devDependencies": {
-    "expect": "^24.9.0",
-    "intelli-espower-loader": "^1.0.1",
-    "mocha": "^6.2.3",
-    "nyc": "^14.1.1",
-    "power-assert": "^1.6.1"
+    "@types/node": "^14.14.19",
+    "@typescript-eslint/eslint-plugin": "^4.12.0",
+    "@typescript-eslint/parser": "^4.12.0",
+    "eslint": "^7.17.0",
+    "eslint-config-airbnb-typescript": "^12.0.0",
+    "eslint-plugin-import": "^2.22.1",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3"
   }
 }
